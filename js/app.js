@@ -22,13 +22,17 @@ $(function() {
       		apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
       		//q: searchTerm,
       		format: 'JSONP',
-      		q_track: searchTerm,
+      		q_track: 'back to december',
+      		q_artist: 'taylor swift',
+      		f_has_lyrics: '1'
  		}
     
     	$.ajax({
 			type: 'GET',
 			url: "http://api.musixmatch.com/ws/1.1/track.search",
 			data: params,
+			dataType: 'jsonp',
+			jsonp: 'callback',
 			success: function(data) {
 				console.log(data.message);
 				//showResults(data.track);
