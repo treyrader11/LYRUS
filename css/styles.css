@@ -1,0 +1,20 @@
+h1 {
+	text-align: center;
+	color: red;
+}
+
+#feed {
+	text-align: center;
+}
+
+#search-term {
+	text-align: center;
+}
+
+ul#search-results {
+	text-align: center;
+}
+
+li {
+	list-style-type: none;
+}
