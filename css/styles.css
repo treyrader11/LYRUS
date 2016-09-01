@@ -6,6 +6,16 @@
 	background-position: center;
 	background-attachment: fixed;
 }
+@media screen and (min-width: 320px) {
+    #bg-image {
+        background-image: url("http://scienceillustrated.com.au/blog/wp-content/uploads/2012/06/music.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100%;
+	background-position: center;
+	background-attachment: fixed;
+    }
+}
 
 .p {
 	width: 50% ;
