@@ -29,7 +29,7 @@ $(function() {
     
     	$.ajax({
 			type: 'GET',
-			url: "http://api.musixmatch.com/ws/1.1/track.search",
+			url: "https://api.musixmatch.com/ws/1.1/track.search",
 			data: params,
 			dataType: 'jsonp',// tells jQuery to make a jsonp request
 			jsonp: 'callback', // jQuery automatically adds callback=someRandomFunctionName
