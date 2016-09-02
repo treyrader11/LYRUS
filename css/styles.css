@@ -1,20 +1,21 @@
-h1 {
-	text-align: center;
-	color: red;
+#bg-image {
+	background-image: url("http://scienceillustrated.com.au/blog/wp-content/uploads/2012/06/music.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100%;
+	background-position: center;
+	background-attachment: fixed;
 }
 
-#feed {
-	text-align: center;
+.p {
+	width: 50% ;
+	margin: 0 auto;
+	background-color: #eee;
+	padding: 30px;
+	border-radius: 5%;
+	box-shadow: 10px 10px 5px #888888;
+
 }
 
-#search-term {
-	text-align: center;
-}
 
-ul#search-results {
-	text-align: center;
-}
 
-li {
-	list-style-type: none;
-}
