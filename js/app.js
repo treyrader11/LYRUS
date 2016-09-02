@@ -21,14 +21,21 @@ $(function() {
       		
       		apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
       		//q: searchTerm,
-      		format: 'JSONP',
-      		q_track: searchTerm,
+      		format: 'JSONP', // tells api we need a jsonp response
+      		q_track: 'back to december',
+      		q_artist: 'taylor swift',
+      		f_has_lyrics: '1'
+      		// callback parameter is required by the API. However 
+      		// jQuery automatically adds this with the "jsonp: 'callback'" property passed to the ajax call
+      		// callback: callbackFunction 
  		}
     
     	$.ajax({
 			type: 'GET',
 			url: "http://api.musixmatch.com/ws/1.1/track.search",
 			data: params,
+			dataType: 'jsonp', // tells jQuery to make a jsonp request
+			jsonp: 'callback', // jQuery automatically adds callback=someRandomFunctionName to the API request GET parameters (params)
 			success: function(data) {
 				console.log(data.message);
 				//showResults(data.track);
