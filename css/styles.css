@@ -5,6 +5,8 @@
 	min-height: 100%;
 	background-position: center;
 	background-attachment: fixed; /*paralex scrollign effect*/
+	margin-top: -32px;
+	color: #c13b3b;
 }
 
 
@@ -34,7 +36,9 @@
 	font-style: bold;
 }
 
-
+#query {
+	text-align: center;
+}
 
 
 
@@ -43,16 +47,17 @@
  .jumbotron { 
     /*background: url("http://thumbs.dreamstime.com/z/music-notes-color-background-19055313.jpg");
     */
-    background: black;
+    background: #130f0f;
     background-repeat: no-repeat;
     background-size: cover; 
     color: #ffffff;
     padding: 100px 25px;
 }
 
-.jumbotron h1 {
+.jumbotron h1, h3, h4{
 	color: #d9534f;
 	font-weight: 600;
+	margin-top: -4px;
 }
 
 .text-center {
