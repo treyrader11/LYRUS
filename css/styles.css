@@ -23,16 +23,16 @@
 	background: transparent;
 }
 
-#search-term {
-	text-align: center;
-	margin-top: 21em;
-}
  #search-results {
  	max-width: 960px;
  	margin: 0 auto;
  	box-shadow:  10px 10px 5px #888888;
  }
 
+#search-results .header {
+	font-size: 20px;
+	font-style: bold;
+}
 
 
 
@@ -41,9 +41,18 @@
 
 
  .jumbotron { 
-    background-color: #f4511e; 
+    /*background: url("http://thumbs.dreamstime.com/z/music-notes-color-background-19055313.jpg");
+    */
+    background: black;
+    background-repeat: no-repeat;
+    background-size: cover; 
     color: #ffffff;
     padding: 100px 25px;
+}
+
+.jumbotron h1 {
+	color: #d9534f;
+	font-weight: 600;
 }
 
 .text-center {

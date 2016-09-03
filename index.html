@@ -10,9 +10,9 @@
 	
 	
 	<div class="jumbotron text-center"> 
-  		<h1>LYR<em><span style="color: white">US</span></em></h1> 
+  		<h1>LYR<em>US</em></h1> 
   		<p>Search for lyrics to your favorite song</p>
-  		<form class="form-inline">
+  		<form id="search-term" class="form-inline">
     		<input type="text" class="form-control" size="30" placeholder="Enter song title">
     		<button type="submit" class="btn btn-danger">Search</button>
   		</form> 
@@ -20,25 +20,35 @@
 
 
 
-	<div class="container-fluid text-center">
+	<div id="bg-image" class="container-fluid text-center">
 	  	<div class="text-center">
 	  		<h2>Lyrics, artists, video, and album goes here</h2>
 	    	<ul class="row list-unstyled list-inline" id="search-results">
 		    	<li class="col-sm-4">
 		    		<div class="panel panel-default">
-		    			<p>Videos</p>
+		    			<p class="header">Videos</p>
+		    			<ul id="video-list" class="list-unstyled">
+		    				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugiat ipsum aut sed molestias eligendi, facere earum corporis itaque impedit iste autem illum inventore facilis culpa fugit vero fuga. Corporis.</li>
+		    			</ul>
+
 		    						
 		    		</div>
 		    	</li>
 		    	<li class="col-sm-4">
 		    		<div class="panel panel-default">
-		    			<p>Lryics</p>
+		    			<p class="header">Lyrics</p>
+		    			<ul id="lyrics-list" class="list-unstyled">
+		    				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugiat ipsum aut sed molestias eligendi, facere earum corporis itaque impedit iste autem illum inventore facilis culpa fugit vero fuga. Corporis.</li>
+		    			</ul>
 		    						
 		    		</div>
 		    	</li>
 		    	<li class="col-sm-4">
 		    		<div class="panel panel-default">
-		    			<p>Artist</p>
+		    			<p class="header">Artist</p>
+		    			<ul id="artist-list" class="list-unstyled">
+		    				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugiat ipsum aut sed molestias eligendi, facere earum corporis itaque impedit iste autem illum inventore facilis culpa fugit vero fuga. Corporis.</li>
+		    			</ul>
 		    						
 		    		</div>
 		    	</li>
@@ -46,35 +56,7 @@
 	    </div>
 	</div>
 	    
- 	
  
-
-<div class="container-fluid text-center bg-grey">
-  <h2>Example</h2>
-  <h4>must learn how to get columns inside of row to adjust correctly</h4>
-  <div class="row text-center">
-    <div class="col-sm-4"> <!--4 because there are 3 columns-->
-    	<div class="panel panel-default text-center"> <!--use panel panel-default as a container to keep contents inside of column-->
-    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel magnam dolore ipsam labore aspernatur repellat aperiam ratione eaque, blanditiis aliquid reiciendis dolorem temporibus dolorum magni quidem soluta nobis beatae debitis!</p>
-    	</div>
-    </div>
-    <div class="col-sm-4">
-    	<div class="panel panel-default text-center">
-    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nam omnis natus, eius tempora modi libero adipisci iure error. Consectetur nam quae debitis maiores alias, modi aperiam. Aperiam, debitis, neque?</p>
-    	</div>
-    </div>
-    <div class="col-sm-4">
-    	<div class="panel panel-default">
-    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos accusamus beatae deleniti repellat provident, aliquid dicta eligendi vitae nulla earum excepturi nihil sed, qui quod perferendis laborum quidem quos sunt?</p>
-    	</div>
-    </div>
-</div>
-	
-
-
-
-
-
 
 	<script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
