@@ -41,11 +41,11 @@ $(function() {
 				console.log(data);
 				var trackLyrics = data.message.header;
 				//var track = trackList.track;
-				//showLyrics(trackLyrics);
-				console.log(trackLyrics);
+				showLyrics(trackLyrics);
+				console.log("the track info " +trackLyrics);
 			},
 			error: function() {
-				$('#feed').text("couldn't retrieve data");
+				$('#lyrics-list').text("couldn't retrieve data");
 			}
 		});
 	}
@@ -60,9 +60,15 @@ function showLyrics(trackLyrics) {
   		html += '<li>' +songLyrics+ '</li><br/>';
   	}); //the 'target' attribute tells the browser to open the linked url in a different window.
 
-  $('#search-results').html(html);
+  $('#lyrics-list').html(html);
  
 }
+
+
+
+
+
+
 
 
 //you tube info below
@@ -94,13 +100,12 @@ function getVideos(searchTerm) {
       q: searchTerm
     }
     // the url (endpoint). AN endpoint is just a special kind of url
-    var url ='https://www.googleapis.com/youtube/v3/search'
+    var url ='https://www.googleapis.com/youtube/v3/search';
 
     
     $.getJSON(url, params, function(data) {
       console.log(data);
       showResults(data.items);
-      console.log("the data items are " + data.items);
     })
   }
 
@@ -112,11 +117,11 @@ function showResults(videos) {
   $.each(videos, function(index, video){
 //must include 'value' inside variables, becaue 'value', in this context, is equal to 'results', which = 'data.items'
 
-    var thumbnail = video.snippet.thumbnails.medium.url; //same as saying data.items.snippet....
+    var thumbnail = video.snippet.thumbnails.default.url; //same as saying data.items.snippet....
     var title = video.snippet.title; 
     var videoURL = "https://www.youtube.com/watch?v=" + video.id.videoId;
 
-  	html += '<li><a href="' +videoURL+ '" target="_blank"><h3>' +title+ '</h3></a><br/><img src="' +thumbnail+ ' /></li><br/>';
+  	html += '<li><a href="' +videoURL+ '" target="_blank"><h5>' +title+ '</h5></a><br/><img src="' +thumbnail+ ' /></li><br/>';
   }); //the 'target' attribute tells the browser to open the linked url in a different window.
 
   $('#videos-list').html(html);
