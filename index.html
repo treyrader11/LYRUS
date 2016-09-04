@@ -15,6 +15,7 @@
   		<h1>LYR<em>US</em></h1> 
   		<p>Search for the lyrics and videos of your favorite songs</p>
   		<form id="search-term" class="form-inline">
+  		<!--the autocomplete='off' attribute keeps the textarea in its natural state-->
     		<input type="text" autocomplete="off" id="query" class="form-control" size="30" placeholder="Enter song title">
     		<button type="submit" class="btn btn-danger">Search</button>
   		</form> 
@@ -30,10 +31,7 @@
 		    		<div class="panel panel-default">
 		    			<p class="header">Videos</p>
 		    			<ul id="videos-list" class="list-unstyled">
-		    				<!--<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugiat ipsum aut sed molestias eligendi, facere earum corporis itaque impedit iste autem illum inventore facilis culpa fugit vero fuga. Corporis.</li>-->
 		    			</ul>
-
-		    						
 		    		</div>
 		    	</li>
 		    	<li class="col-sm-4">
@@ -42,7 +40,6 @@
 		    			<ul id="lyrics-list" class="list-unstyled">
 		    				
 		    			</ul>
-		    						
 		    		</div>
 		    	</li>
 		    	<li class="col-sm-4">
@@ -60,7 +57,7 @@
 	    
  
 
-	<script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
+	<!--<script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/app.js"></script>
