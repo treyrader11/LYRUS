@@ -4,35 +4,36 @@ $(function() {
 	$('#search-term').submit(function (event) { //the <button> has to have a type="submit"
 		event.preventDefault(); //need this to prevent the page from refreshing since that is the default functionality
     	var searchTerm = $('#query').val(); //define variable last
-    	getRequest(searchTerm);
+    	getTracks(searchTerm);
     	getVideos(searchTerm);
 	})
 })
 	
 	
-	function getRequest(searchTerm) {
+	function getTracks(searchTerm) {
     
     	var params = {
       		
       		apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
-      		q: searchTerm,
+      		//q: searchTerm,
       		format: 'JSONP',
+      		track_id: searchTerm,
 		}
     
     	$.ajax({
 			type: 'GET',
-			url: "https://api.musixmatch.com/ws/1.1/track.search",
+			url: "https://api.musixmatch.com/ws/1.1/track.lyrics.get",
 			data: params,
 			dataType: 'jsonp',// tells jQuery to make a jsonp request
 			jsonp: 'callback', // jQuery automatically adds callback=someRandomFunctionName
 			// to the API request GET parameters (params)
 			success: function(data) {
 
-				console.log(data);
+				
 				var trackList = data.message.body.track_list;
-				//var track = trackList.track;
+				//console.log(data);
 				showTracks(trackList);
-				console.log("the tracklists are: " +trackList);
+				//console.log("the tracklists are: " +trackList);
 			},
 			error: function() {
 				$('#lyrics-list').text("couldn't retrieve data");
@@ -44,15 +45,23 @@ function showTracks(trackList) {
 	var html = "";
 
   $.each(trackList, function(index, tracks){
-  		console.log("looping thru trackList");
+  		console.log("looping thru trackLyrics");
   		var artist = tracks.track.artist_name;
-  		html += '<li>' +artist+ '</li><br/>';
+  		html += '<li><a href="#" data-track_id="' +track_id+ '"">' + artist+ '</a></li><br/>';
   	}); 
 
   $('#lyrics-list').html(html);
+
  
 }
 
+/*$('#lyrics-list').on('click', 'a', function(e) {
+e.preventDefault();
+
+var track_id = $(this).attr('href').replace('#', '');
+
+
+})*/
 
 
 
@@ -74,8 +83,8 @@ function getVideos(searchTerm) {
     var url ='https://www.googleapis.com/youtube/v3/search';
 
     
-    $.getJSON(url, params, function(data) {
-      console.log(data);
+    $.getJSON(url, params, function(data) { //another way to make a ajax GETrequest with jQuery
+      //console.log(data);
       showResults(data.items);
       $('#query').val('');
       
@@ -89,7 +98,7 @@ function showResults(videos) {
 
   $.each(videos, function(index, video){
 
-    var thumbnail = video.snippet.thumbnails.default.url; 
+    var thumbnail = video.snippet.thumbnails.medium.url; 
     var title = video.snippet.title;
     var videoId = video.id.videoId; 
     var videoURL = "https://www.youtube.com/watch?v=" + videoId;
