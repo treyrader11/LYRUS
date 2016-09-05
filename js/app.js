@@ -15,14 +15,14 @@ $(function() {
     	var params = {
       		
       		apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
-      		//q: searchTerm,
+      		q: searchTerm,
       		format: 'JSONP',
-      		track_id: searchTerm,
+      		//track_id: searchTerm,
 		}
     
     	$.ajax({
 			type: 'GET',
-			url: "https://api.musixmatch.com/ws/1.1/track.lyrics.get",
+			url: "https://api.musixmatch.com/ws/1.1/track.search",
 			data: params,
 			dataType: 'jsonp',// tells jQuery to make a jsonp request
 			jsonp: 'callback', // jQuery automatically adds callback=someRandomFunctionName
@@ -47,13 +47,59 @@ function showTracks(trackList) {
   $.each(trackList, function(index, tracks){
   		console.log("looping thru trackLyrics");
   		var artist = tracks.track.artist_name;
-  		html += '<li><a href="#" data-track_id="' +track_id+ '"">' + artist+ '</a></li><br/>';
+  		html += '<li><a href="#">' +artist+ '</a></li><br/>';
   	}); 
 
   $('#lyrics-list').html(html);
 
  
 }
+
+function getLyrics(track_id) {
+    
+    	var params = {
+      		
+      		apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
+      		//q: searchTerm,
+      		format: 'JSONP',
+      		track_id: track_id,
+		}
+    
+    	$.ajax({
+			type: 'GET',
+			url: "https://api.musixmatch.com/ws/1.1/track.lyrics.get",
+			data: params,
+			dataType: 'jsonp',// tells jQuery to make a jsonp request
+			jsonp: 'callback', // jQuery automatically adds callback=someRandomFunctionName
+			// to the API request GET parameters (params)
+			success: function(data) {
+
+				
+				var lyrics = data.message.body.lyrics;
+				//console.log(data);
+				//showLyrics(lyrics);
+				//console.log("the tracklists are: " +trackList);
+			},
+			error: function() {
+				$('#lyrics-list').text("couldn't retrieve data");
+			}
+		});
+	}
+
+function showLyrics(trackLyrics) {
+	var html = "";
+
+  $.each(trackLyrics, function(index, lyrics){
+  		console.log("looping thru trackLyrics");
+  		var artist = tracks.track.artist_name;
+  		html += '<li><a href="#">' +artist+ '</a></li><br/>';
+  	}); 
+
+  $('#lyrics-list').html(html);
+
+ 
+}
+
 
 /*$('#lyrics-list').on('click', 'a', function(e) {
 e.preventDefault();
