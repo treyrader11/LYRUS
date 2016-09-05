@@ -77,7 +77,7 @@ function getLyrics(track_id) {
 				
 				var lyrics = data.message.body.lyrics;
 				//console.log(data);
-				//showLyrics(lyrics);
+				showLyrics(lyrics);
 				//console.log("the tracklists are: " +trackList);
 			},
 			error: function() {
@@ -101,13 +101,13 @@ function showLyrics(trackLyrics) {
 }
 
 
-/*$('#lyrics-list').on('click', 'a', function(e) {
-e.preventDefault();
+$('#lyrics-list').on('click', 'a', function(e) {
+    e.preventDefault();
 
-var track_id = $(this).attr('href').replace('#', '');
+    var track_id = $(this).data('track_id');
+    getLyrics(track_id);
 
-
-})*/
+})
 
 
 
