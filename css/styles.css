@@ -23,7 +23,7 @@
 
 .container,
 .container-fluid {
-	background: transparent;
+	/*background: transparent;*/
 }
 
  #search-results {
@@ -46,9 +46,10 @@
 
 
  .jumbotron { 
-    /*background: url("http://thumbs.dreamstime.com/z/music-notes-color-background-19055313.jpg");
-    */
-    background: #130f0f;
+    background: url("http://thumbs.dreamstime.com/z/music-notes-color-background-19055313.jpg");
+    
+    background: #130f0f;*/
+
     
     background-repeat: no-repeat;
     background-size: cover; 
@@ -97,11 +98,11 @@
 }
 
 .container {
-
+	background: transparent;
 }
 
 .container-fluid {
-	
+	background: transparent;
 }
 
 .thumbnail {
