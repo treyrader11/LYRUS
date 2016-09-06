@@ -138,7 +138,7 @@ function showResults(videos) {
 
   $.each(videos, function(index, video){
 
-    var thumbnail = video.snippet.thumbnails.medium.url; 
+    var thumbnail = video.snippet.thumbnails.default.url; 
     var title = video.snippet.title;
     var videoId = video.id.videoId; 
     var videoURL = "https://www.youtube.com/watch?v=" + videoId;
