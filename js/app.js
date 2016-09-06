@@ -17,7 +17,6 @@ $(function() {
       		apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
       		q: searchTerm,
       		format: 'JSONP',
-      		//track_id: searchTerm,
 		}
     
     	$.ajax({
@@ -33,7 +32,6 @@ $(function() {
 				var trackList = data.message.body.track_list;
 				//console.log(data);
 				showTracks(trackList);
-				//console.log("the tracklists are: " +trackList);
 			},
 			error: function() {
 				$('#lyrics-list').text("couldn't retrieve data");
@@ -45,9 +43,10 @@ function showTracks(trackList) {
 	var html = "";
 
   $.each(trackList, function(index, tracks){
-  		console.log("looping thru trackLyrics");
+  		//console.log("looping thru trackLyrics");
   		var artist = tracks.track.artist_name;
-  		html += '<li><a href="#">' +artist+ '</a></li><br/>';
+  		var trackId = tracks.track.track_id;
+  		html += '<li><a href="#" data-track_id="' +trackId+ '">' +artist+ '</a></li><br/>';
   	}); 
 
   $('#lyrics-list').html(html);
@@ -55,12 +54,12 @@ function showTracks(trackList) {
  
 }
 
+
 function getLyrics(track_id) {
     
     	var params = {
       		
       		apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
-      		//q: searchTerm,
       		format: 'JSONP',
       		track_id: track_id,
 		}
@@ -75,10 +74,9 @@ function getLyrics(track_id) {
 			success: function(data) {
 
 				
-				var lyrics = data.message.body.lyrics;
+				var lyrics = data.message.body.lyrics.lyrics_body;
 				//console.log(data);
 				showLyrics(lyrics);
-				//console.log("the tracklists are: " +trackList);
 			},
 			error: function() {
 				$('#lyrics-list').text("couldn't retrieve data");
@@ -87,15 +85,11 @@ function getLyrics(track_id) {
 	}
 
 function showLyrics(trackLyrics) {
-	var html = "";
+	var html = trackLyrics;
 
-  $.each(trackLyrics, function(index, lyrics){
-  		console.log("looping thru trackLyrics");
-  		var artist = tracks.track.artist_name;
-  		html += '<li><a href="#">' +artist+ '</a></li><br/>';
-  	}); 
 
-  $('#lyrics-list').html(html);
+
+  $('#artist-list').html(html);
 
  
 }
@@ -149,7 +143,7 @@ function showResults(videos) {
     var videoId = video.id.videoId; 
     var videoURL = "https://www.youtube.com/watch?v=" + videoId;
 
-  	html += '<li><h5>' +title+ '</h5><br/><a href="' +videoURL+ '" target="_blank"><img src="' +thumbnail+ ' /></a></li><br/>';
+  	html += '<li><h5>' +title+ '</h5><br/><a href="' +videoURL+ '" target="_blank"><img src="' +thumbnail+ '"/></a></li><br/>';
   }); //the 'target' attribute tells the browser to open the linked url in a different window.
 
   $('#videos-list').html(html);
@@ -157,6 +151,12 @@ function showResults(videos) {
 }
 
 	
+
+
+
+
+
+
 
 	//mediawiki api below
 
