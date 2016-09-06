@@ -11,6 +11,11 @@
 <script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
 <body>
 	
+
+	<ul class="nav navbar-default navbar-static-top" id="bg-offblack" role="navigation">
+  		<li class="pull-left"><a href="#">HOME</a></li>
+  		<li class="pull-right"><a href="#">ABOUT</a></li>
+	</ul>
 	
 	<div class="jumbotron text-center"> 
   		<h3>Welcome<h3>
@@ -28,7 +33,7 @@
 
 	<div class="container-fluid text-center" id="bg-image">
 	  	<div class="text-center">
-	  		<h2>Lyrics, artists, video, and album goes here</h2>
+	  		<h2>Click on each result to take a closer look</h2>
 	    	<ul class="row list-unstyled list-inline" id="search-results">
 		    	<li class="col-sm-4">
 		    		<div class="panel panel-default">
@@ -57,7 +62,21 @@
 		    </ul>
 	    </div>
 	</div>
-	    
+	
+
+	<div class="modal fade" role="dialog" id="lyrics-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4>Lyrics</h4>
+				</div>
+				<ul class="modal-body" id="lyrics">
+				</ul>
+					
+				</div>
+			</div>
+		</div>
+	</div>
  
 
 	<!--<script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>-->

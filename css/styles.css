@@ -136,3 +136,37 @@ body {
 #h1 {
 	font-size: 75px;
 }
+
+#bg-offblack {
+	background: #130f0f;
+	color: white;
+
+}
+
+.active {
+	font-size: 20px;
+	text-decoration: underline;
+
+}
+
+.nav-justified {
+	/*allows things to stretch across screen evenly*/
+}
+
+.nav >li a {
+	color: rgb(243, 243, 243);
+}
+
+.nav a:hover {
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+.navbar-inverse {
+	/*gives you a black nav/navbar-default gives you a white
+}
+
+.navbar-static-top {
+	makes it responsive
+
+}*/

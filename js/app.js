@@ -46,7 +46,7 @@ function showTracks(trackList) {
   		//console.log("looping thru trackLyrics");
   		var artist = tracks.track.artist_name;
   		var trackId = tracks.track.track_id;
-  		html += '<li><a href="#" data-track_id="' +trackId+ '">' +artist+ '</a></li><br/>';
+  		html += '<li><a href="#lyrics-modal" data-toggle="modal" data-track_id="' +trackId+ '">' +artist+ '</a></li><br/>';
   	}); 
 
   $('#lyrics-list').html(html);
@@ -89,7 +89,7 @@ function showLyrics(trackLyrics) {
 
 
 
-  $('#artist-list').html(html);
+  $('#lyrics').html(html);
 
  
 }
@@ -125,7 +125,7 @@ function getVideos(searchTerm) {
     
     $.getJSON(url, params, function(data) { //another way to make a ajax GETrequest with jQuery
       //console.log(data);
-      showResults(data.items);
+      showVideos(data.items);
       $('#query').val('');
       
     })
@@ -133,7 +133,7 @@ function getVideos(searchTerm) {
 
 
 
-function showResults(videos) {
+function showVideos(videos) {
 	var html = "";
 
   $.each(videos, function(index, video){
