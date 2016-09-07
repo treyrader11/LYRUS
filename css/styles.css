@@ -104,7 +104,7 @@ body {
 }
 
 .container {
-	background: transparent;
+	color: #d9534f;
 }
 
 .container-fluid {
@@ -163,10 +163,23 @@ body {
 }
 
 .navbar-inverse {
-	/*gives you a black nav/navbar-default gives you a white
+	/*gives you a black nav/navbar-default gives you a white*/
 }
 
 .navbar-static-top {
-	makes it responsive
+	/*makes it responsive*/
 
-}*/
+}
+
+.no-border {
+	border: none;
+}
+
+.modal-header h4 {
+	font-size: 20px;
+	margin-top: 5px;
+}
+
+.indent p:first-line {
+	text-indent: 50px;
+}

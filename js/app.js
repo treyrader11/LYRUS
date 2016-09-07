@@ -46,7 +46,8 @@ function showTracks(trackList) {
   		//console.log("looping thru trackLyrics");
   		var artist = tracks.track.artist_name;
   		var trackId = tracks.track.track_id;
-  		html += '<li><a href="#lyrics-modal" data-toggle="modal" data-track_id="' +trackId+ '">' +artist+ '</a></li><br/>';
+  		var trackName = tracks.track.track_name;
+  		html += '<li><a href="#lyrics-modal" data-toggle="modal" data-track_id="' +trackId+ '">' +artist+ ': ' +trackName+ '</a></li><br/>';
   	}); 
 
   $('#lyrics-list').html(html);
