@@ -186,12 +186,6 @@ ul#video iframe {
 
 }
 
-@media screen and (max-width: 400px) {
-    #video iframe {
-        width: 100;
-        height: 100;
-    }
-}
 
 
 .nav > li > a:hover,
@@ -226,14 +220,7 @@ ul#video iframe {
 	background-attachment: fixed;
 }
 
-@media only all and (max-width: 400px) {
-    #bg-image {
-        width: 0vh;
-        height: 0vh;
-    }
-    #content {
-    	margin-top: -213px;
-    }
+
 /*media query must come after*/
 
 
@@ -261,3 +248,13 @@ ul#video iframe {
 @keyframes blinker {  
   50% { opacity: 0.0; }
 }
+
+
+@media only all and (max-width: 400px) {
+    #bg-image {
+        width: 0vh;
+        height: 0vh;
+    }
+    #content {
+    	margin-top: -213px;
+    }
