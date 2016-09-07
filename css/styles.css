@@ -251,3 +251,11 @@ ul#video iframe {
 #videos-list h5 {
 	color: white;
 }
+
+#h1 {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0.0; }
+}
