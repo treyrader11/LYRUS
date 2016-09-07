@@ -219,12 +219,6 @@ ul#video iframe {
 	height: 100vh;
 }
 
-@media screen and (max-width: 400px) {
-    #bg-image {
-        width: 0vh;
-        height: 0vh;
-    }
-}
 
 #content {
 	margin-top: -748px;
@@ -232,7 +226,15 @@ ul#video iframe {
 	background-attachment: fixed;
 }
 
-
+@media only all and (max-width: 400px) {
+    #bg-image {
+        width: 0vh;
+        height: 0vh;
+    }
+    #content {
+    	margin-top: -213px;
+    }
+/*media query must come after*/
 
 
 
