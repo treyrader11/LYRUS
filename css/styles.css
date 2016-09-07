@@ -245,6 +245,14 @@ ul#video iframe {
 	border: none;
 }
 
+
+/*.modal-dialog,*/
+.modal-content,
+.modal-body {
+	background: rgba(0, 0, 0, 0.86);
+	color: white;
+}
+
 #lyrics-list a,
 #videos-list h5 {
 	color: white;
