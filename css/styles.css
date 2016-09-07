@@ -206,47 +206,41 @@ ul#video iframe {
 }
 
 
-
-
-
-
-
-
-#bg-container { 
-	/*opacity: .2;*/
-	/*overflow:hidden;*/
-	
-
-	
+#bg-image {
+	width: 100%;
+	opacity: .2;
 	background-repeat: no-repeat;
 	background-size: cover;
 	/*max-height: 100%;*/
 	background-position: center;
 	background-attachment: fixed; /*paralex scrollign effect*/
 	margin-top: -174px;
-	color: #c13b3b;
+	/*color: #c13b3b;*/
 	height: 100vh;
 }
 
-#bg {
-	width: 100%;
+@media screen and (max-width: 400px) {
+    #bg-image {
+        width: 0vh;
+        height: 0vh;
+    }
 }
 
 #content {
-	position: absolute;
-	top: 409px;
+	margin-top: -748px;
 	padding:30px; 
-	/*color:#FFF;*/ 
-	/*text-shadow:#000 2px 2px;*/
+	background-attachment: fixed;
 }
+
+
+
+
 
 .panel {
 	background: transparent;
 	border: none;
 }
 
-
-/*.modal-dialog,*/
 .modal-content,
 .modal-body {
 	background: rgba(0, 0, 0, 0.86);
