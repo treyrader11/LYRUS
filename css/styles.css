@@ -1,5 +1,6 @@
 body {
 	font-family: 'Baloo Chettan', cursive;
+	background: black;
 }
 
 #bg-image {
@@ -52,7 +53,8 @@ body {
  .jumbotron { 
     /*background: url("http://thumbs.dreamstime.com/z/music-notes-color-background-19055313.jpg");
     */
-    background: #130f0f;
+    /*background: #130f0f;*/
+    background: black;
 
     
     background-repeat: no-repeat;
@@ -137,10 +139,10 @@ body {
 	font-size: 75px;
 }
 
-#bg-offblack {
-	background: #130f0f;
-	color: white;
-
+.bg-black {
+	/*background: #130f0f;*/
+	/*color: white;*/
+	background: black;
 }
 
 .active {
@@ -191,6 +193,59 @@ ul#video iframe {
     }
 }
 
-.nav a:hover {
-	background: transparent; !important
+
+.nav > li > a:hover,
+.nav > li > a:focus,
+.dropdown-menu, 
+.dropdown-menu .open>a:hover,
+.dropdown-menu .open>a:focus, 
+.nav .open>a,
+.nav .open>a:focus, 
+.nav .open>a:hover {
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+#bg-container { 
+	/*opacity: .2;*/
+	/*overflow:hidden;*/
+	
+
+	
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*max-height: 100%;*/
+	background-position: center;
+	background-attachment: fixed; /*paralex scrollign effect*/
+	margin-top: -174px;
+	color: #c13b3b;
+	height: 100vh;
+}
+
+#bg {
+	width: 100%;
+}
+
+#content {
+	position: absolute;
+	top: 409px;
+	padding:30px; 
+	/*color:#FFF;*/ 
+	/*text-shadow:#000 2px 2px;*/
+}
+
+.panel {
+	background: transparent;
+	border: none;
+}
+
+#lyrics-list a,
+#videos-list h5 {
+	color: white;
 }
