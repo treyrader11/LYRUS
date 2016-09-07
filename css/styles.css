@@ -144,8 +144,8 @@ body {
 }
 
 .active {
-	/*text-decoration: underline;*/
-	border-bottom: 3px solid;
+	text-decoration: underline;
+	/*border-bottom: 3px solid;*/
 
 }
 

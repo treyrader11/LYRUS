@@ -151,7 +151,7 @@ function showVideos(videos) {
 		$('#videos-list').on('click', 'a', function(e) {
     		e.preventDefault();
 
-    		$('#videos').html('<li><iframe width="560" height="315" src="https://www.youtube.com/embed/"' +videoId+ 'frameborder="0" allowfullscreen></iframe></li>');
+    		$('#videos').html('<li><iframe width="300" height="230" src="https://www.youtube.com/embed/"' +videoId+ 'frameborder="0" allowfullscreen></iframe></li>');
     	})
 	});
 
