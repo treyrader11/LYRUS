@@ -143,13 +143,35 @@ function showVideos(videos) {
     var title = video.snippet.title;
     var videoId = video.id.videoId; 
     var videoURL = "https://www.youtube.com/watch?v=" + videoId;
+    //var playVid = '<iframe src="https://www.youtube.com/embed/' +videoId+ '" frameborder="0" allowfullscreen></iframe>';
 
-  	html += '<li><h5>' +title+ '</h5><br/><a href="' +videoURL+ '" target="_blank"><img src="' +thumbnail+ '"/></a></li><br/>';
-  }); //the 'target' attribute tells the browser to open the linked url in a different window.
+  	html += '<li><h5>' +title+ '</h5><br/><a href="#video-modal" data-toggle="modal"><img src="' +thumbnail+ '"/></a></li><br/>';
+  
 
-  $('#videos-list').html(html);
+		$('#videos-list').on('click', 'a', function(e) {
+    		e.preventDefault();
+
+    		$('#videos').html('<li><iframe width="560" height="315" src="https://www.youtube.com/embed/"' +videoId+ 'frameborder="0" allowfullscreen></iframe></li>');
+    	})
+	});
+
+  	$('#videos-list').html(html)
+
+	/*$('#videos-list').on('click', 'a', function(e) {
+    	e.preventDefault();
+
+    	$('#videos').text('<li><iframe width="560" height="315" src="https://www.youtube.com/embed/qcQXVpGTNdo"' +videoId+ 'frameborder="0" allowfullscreen></iframe></li>');
+    });*/
+
 
 }
+   //the 'target' attribute tells the browser to open the linked url in a different window.
+
+//<iframe width="560" height="315" src="https://www.youtube.com/embed/qcQXVpGTNdo" frameborder="0" allowfullscreen></iframe>
+//<iframe src="https://www.youtube.com/embed/' +videoId+ '" frameborder="0" allowfullscreen></iframe>
+
+
+
 
 	
 

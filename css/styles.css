@@ -144,8 +144,8 @@ body {
 }
 
 .active {
-	font-size: 20px;
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+	border-bottom: 3px solid;
 
 }
 
@@ -180,6 +180,3 @@ body {
 	margin-top: 5px;
 }
 
-.indent p:first-line {
-	text-indent: 50px;
-}
