@@ -180,3 +180,13 @@ body {
 	margin-top: 5px;
 }
 
+ul#video iframe {
+
+}
+
+@media screen and (max-width: 400px) {
+    #video iframe {
+        width: 250;
+        height: 210;
+    }
+}
