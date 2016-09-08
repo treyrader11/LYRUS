@@ -10,7 +10,7 @@ $(function() {
     	var searchTerm = $('#query').val(); //define variable last
     	getTrackNames(searchTerm);
     	getVideos(searchTerm);
-    	getArtistInfo(searchTerm);
+    	//getArtistInfo(searchTerm);
 	});
 
 	 
@@ -61,31 +61,36 @@ function showTrackNames(trackList) {
   		var artist = tracks.track.artist_name;
   		var trackId = tracks.track.track_id;
   		var trackName = tracks.track.track_name;
-  		html += '<li><a href="#lyrics-modal" data-toggle="modal" data-track_id="' +trackId+ '">' +artist+ ': ' +trackName+ '</a></li><br/>';
+  		//console.log('the track_id is "' +trackId+ '" and the name of the track is "' +trackName+'".');
+
+  		html += '<li><a href="#lyrics-modal" data-toggle="modal" data-track_name="' +trackName+ '" data-track_id="' +trackId+ '">' +artist+ ': ' +trackName+ '</a></li><br/>';
+  		//insideModal(trackName);
   	}); 
 
   $('ul#lyrics-list').html(html); //this html is a <li> in which a link targets a modal window
+  
+  /*$('ul#lyrics-list').on('click', 'a', function(e) {
+  	e.preventDefault();
+  	//console.log(trackName);
+  	html = '<h4>' +trackName+ '</h4';
+    $('#lyrics-modal .modal-header').html(html);
+  });*/
+
 }
 
-$('ul#lyrics-list').on('click', 'a', function(e) {
-    e.preventDefault();
 
-    var track_id = $(this).data('track_id'); //this is how you transfer data 
-    //that are contained within a variable of another function.
-    //We're getting the value of 'data-track_id' from showTrackNames() and
-    //passing it to getLyrics().
+function getLyrics(track_id, track_name) { //track_id is the parameter in order 
+	//to get the specific json data listed on the musixmatch api doc.
+	//So we pass it in getLyrics and define it in the params object.
     
-    getLyrics(track_id);
 
-})
-
-function getLyrics(track_id) {
     //We need to make a new ajax call because there's a 
     //different endpoint for obtaining the lyrics to tracks
     var params = {
       	apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
       	format: 'JSONP',
       	track_id: track_id,
+      	track_name: track_name,
 		}
     
     $.ajax({
@@ -97,8 +102,10 @@ function getLyrics(track_id) {
 			// to the API request GET parameters (params)
 		success: function(data) {
 			var lyrics = data.message.body.lyrics.lyrics_body;
-			//console.log(data);
+			var copyright = data.message.body.lyrics.lyrics_copyright;
+			console.log(copyright);
 			showLyrics(lyrics);
+			showCopyright(copyright);
 		},
 	});
 }
@@ -108,6 +115,42 @@ function showLyrics(lyrics) {
 
 	$('ul#lyrics').html(html);
 }
+
+function showCopyright(copyright) {
+	var html = '<p>' +copyright+ '</p><br/><br/>';
+	$('#lyrics-modal .modal-footer').prepend(copyright);
+}
+
+$('ul#lyrics-list').on('click', 'a', function(e) {
+    e.preventDefault();
+
+    var track_id = $(this).data('track_id'); //this is how you transfer data 
+    //that are contained within a variable of another function.
+    //We're getting the value of 'data-track_id' from showTrackNames() and
+    //passing it to getLyrics().
+    getLyrics(track_id);
+
+    var track_name = $(this).data('track_name');
+    getLyrics(track_id, track_name);
+
+})
+
+
+
+
+//new stuff
+
+function insideModal(trackName) {
+
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -212,7 +255,6 @@ function showLightbox(URL) {
 	}
 
 //https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Sachin_Tendulkar
-
 
 
 

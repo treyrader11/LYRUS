@@ -241,6 +241,9 @@ ul#video iframe {
   50% { opacity: 0.0; }
 }*/
 
+#lyrics-footer {
+	list-style-type: none;
+}
 
 @media only all and (max-width: 400px) {
     #bg-image {
