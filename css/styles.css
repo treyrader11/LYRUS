@@ -250,8 +250,7 @@ body {
 
 @media only all and (max-width: 800px) {
     #bg-image {
-        width: vh;
-        height: 50vh;
+        margin-top: -94px;
     }
     #content {
     	margin-top: -660px;
