@@ -248,13 +248,13 @@ body {
     	margin-top: -213px;
     }
 
-@media only all and (max-width: 700px) {
+@media only all and (max-width: 800px) {
     #bg-image {
         width: vh;
         height: 50vh;
     }
     #content {
-    	margin-top: -670px;
+    	margin-top: -660px;
     }
 
  @media screen and (max-width: 768px) {
