@@ -31,7 +31,8 @@ function getTracks(track_id) {
 
 
 $('#lyrics-footer .btn').click(function() {
-	$('.link').remove();
+	$('.link').remove(); //needs tobe removed when modal fades out
+	//or find a better way of doing it.
 })
 
 
