@@ -8,7 +8,7 @@ $(function() {
 	$searchForm.submit(function(e) { //the <button> has to have a type="submit"
 		e.preventDefault(); //need this to prevent the page from refreshing since that is the default functionality
     	var searchTerm = $('#query').val(); //define variable last
-    	getTrackNames(searchTerm);
+    	searchTrack(searchTerm);
     	getVideos(searchTerm);
     	//getArtistInfo(searchTerm);
 	});
@@ -25,7 +25,7 @@ $(function() {
 
 //makes an AJAX call to the restful musiXmatch api to retreive data
 
-function getTrackNames(searchTerm) {
+function searchTrack(searchTerm) {
     
     var params = {
       	apikey: "876a23160e89575e71ba5d7851842cb6",
@@ -43,7 +43,7 @@ function getTrackNames(searchTerm) {
 		success: function(data) {
 			var trackList = data.message.body.track_list;
 			//console.log(trackList);
-			showTrackNames(trackList);
+			showTracks(trackList);
 		},
 		error: function() {
 			$('#lyrics-list').text("Sorry, but we're having difficulties retrieving the data");
@@ -53,7 +53,7 @@ function getTrackNames(searchTerm) {
 
 //a function to loop thru themusiXmatch track data
 
-function showTrackNames(trackList) {
+function showTracks(trackList) {
 	var html = "";
 
   $.each(trackList, function(index, tracks){
@@ -64,17 +64,11 @@ function showTrackNames(trackList) {
   		//console.log('the track_id is "' +trackId+ '" and the name of the track is "' +trackName+'".');
 
   		html += '<li><a href="#lyrics-modal" data-toggle="modal" data-track_name="' +trackName+ '" data-track_id="' +trackId+ '">' +artist+ ': ' +trackName+ '</a></li><br/>';
-  		//insideModal(trackName);
+  		//insideModal(trackId);
   	}); 
 
   $('ul#lyrics-list').html(html); //this html is a <li> in which a link targets a modal window
   
-  /*$('ul#lyrics-list').on('click', 'a', function(e) {
-  	e.preventDefault();
-  	//console.log(trackName);
-  	html = '<h4>' +trackName+ '</h4';
-    $('#lyrics-modal .modal-header').html(html);
-  });*/
 
 }
 
@@ -90,7 +84,6 @@ function getLyrics(track_id, track_name) { //track_id is the parameter in order
       	apikey: "876a23160e89575e71ba5d7851842cb6", //look at the output format on the API doc
       	format: 'JSONP',
       	track_id: track_id,
-      	track_name: track_name,
 		}
     
     $.ajax({
@@ -103,7 +96,7 @@ function getLyrics(track_id, track_name) { //track_id is the parameter in order
 		success: function(data) {
 			var lyrics = data.message.body.lyrics.lyrics_body;
 			var copyright = data.message.body.lyrics.lyrics_copyright;
-			console.log(copyright);
+			//console.log(copyright);
 			showLyrics(lyrics);
 			showCopyright(copyright);
 		},
@@ -128,21 +121,16 @@ $('ul#lyrics-list').on('click', 'a', function(e) {
     //that are contained within a variable of another function.
     //We're getting the value of 'data-track_id' from showTrackNames() and
     //passing it to getLyrics().
-    getLyrics(track_id);
 
-    var track_name = $(this).data('track_name');
-    getLyrics(track_id, track_name);
+      
+    getLyrics(track_id);
+    getTracks(track_id);
 
 })
 
 
 
 
-//new stuff
-
-function insideModal(trackName) {
-
-}
 
 
 
