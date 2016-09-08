@@ -5,15 +5,14 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
-
-<!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">-->
+<link rel="icon" type="image/png" href="images/note2.jpg">
 <link rel="stylesheet" href="css/styles.css">
 <script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
 <body>
 	
 
 	<ul class="nav navbar-default bg-black navbar-fixed-top" role="navigation">
-  		<li class="pull-left active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">HOME<span class="caret"></span></a> <!--'caret' gives it a dropdown arrow-->
+  		<li class="pull-left active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/projects/lyricAPIHack/aboutPage.html">HOME<span class="caret"></span></a> <!--'caret' gives it a dropdown arrow-->
 		<ul class="dropdown-menu">
           <li><a href="#search-header">Search</a></li>
           <li><a href="#videos-list">Videos</a></li>
@@ -24,7 +23,7 @@
   		<li class="pull-right"><a href="#">ABOUT</a></li>
 	</ul>
 	
-	<div class="jumbotron text-center"> 
+	<div class="jumbotron text-center baloo-chettan"> 
   		<h3>Welcome<h3>
   		<h3>to</h3>
   		<h1 id="h1">LYR<em>US</em></h1> 
@@ -32,15 +31,18 @@
   		<form id="search-term" class="form-inline">
   		<!--the autocomplete='off' attribute keeps the text input's history clear-->
     		<input type="text" autocomplete="off" id="query" class="form-control" size="30" placeholder="Enter name of song and artist">
-    		<button type="submit" class="btn btn-danger">Search</button>
+    		<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+
   		</form> 
 	</div>
 
 
 
 	<div class="container-fluid text-center" id="bg-container">
+	
 		<iframe id="bg-image" width="900" height="900" src="//www.youtube.com/embed/x8o-AHDgiCs?
 		autoplay=1&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1&amp;playlist=PLAYLIST_ID_HERE" frameborder="0"></iframe>
+	
 	
 	  	<div class="text-center" id="content">
 	  		<h2>Click on each result to take a closer look</h2>

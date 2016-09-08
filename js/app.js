@@ -10,6 +10,7 @@ $(function() {
     	var searchTerm = $('#query').val(); //define variable last
     	getTrackNames(searchTerm);
     	getVideos(searchTerm);
+    	getArtistInfo(searchTerm);
 	});
 
 	 
@@ -126,10 +127,11 @@ function getVideos(searchTerm) {
     	data: params,
     	dataType: 'jsonp',
     	success: function(data) {
-    		console.log(data.items);
+    		//console.log(data.items);
     		var itemsArr = data.items;
     		showVideos(itemsArr);
-    		$('#query').val();
+    		$('#query').val(''); //best practice to clear
+    		//form input after search results have displayed.
     	},
     	error: function() {
     		$('#videos-list').text("Sorry, but we're having difficulties with retrieving the data");
@@ -186,44 +188,32 @@ function showLightbox(URL) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	//mediawiki api below
 
-	/*function getArtistInfo(searchTerm) {
+	function getArtistInfo(searchTerm) {
 		var params = {
-			url: "https://en.wikipedia.org/w/api.php",
-			format: "JSONP",
-			q: searchTerm,
-			action: "query",
-			maxlag: "",
-			prop: "info"
+			format: "jsonp",
+			//q: searchTerm,
+			action: searchTerm,
+			//maxlag: "",
+			prop: "extracts"
 		}
 
 		$.ajax({
 			type: 'GET',
-			//url: "https://en.wikipedia.org/w/api.php",
+			url: "https://en.wikipedia.org/w/api.php",
 			data: params,
 			dataType: 'jsonp',
-			jsonp: 'callback',
+			//jsonp: 'callback',
 			success: function(data) {
 				console.log("wiki data is: " +data);
 			}
 		})
 	}
 
-*/
+//https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Sachin_Tendulkar
+
+
+
+
+

@@ -1,13 +1,15 @@
 body {
-	font-family: 'Baloo Chettan', cursive;
+	/*font-family: 'Baloo Chettan', cursive;*/
+
+	font-family: 'Lato', sans-serif;
 	background: black;
 }
 
 #bg-image {
 	background-image: url("http://scienceillustrated.com.au/blog/wp-content/uploads/2012/06/music.jpg");
+	/*make video thumbnail background image*/
 	background-repeat: no-repeat;
 	background-size: cover;
-	/*max-height: 100%;*/
 	background-position: center;
 	background-attachment: fixed; /*paralex scrollign effect*/
 	margin-top: -32px;
@@ -46,31 +48,18 @@ body {
 	text-align: center;
 }
 
-
-
-
-
  .jumbotron { 
-    /*background: url("http://thumbs.dreamstime.com/z/music-notes-color-background-19055313.jpg");
-    */
-    /*background: #130f0f;*/
     background: black;
-
-    
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
     background-size: cover; 
     color: #ffffff;
     padding: 100px 25px;
-    font-family: 'Baloo Chettan', cursive;
-    
-
 }
 
 .jumbotron h1, h3, h4{
 	color: #d9534f;
 	font-weight: 600;
 	margin-top: -13px;
-	font-family: 'Baloo Chettan', cursive;
 }
 
 .text-center {
@@ -97,12 +86,6 @@ body {
 
 .logo {
     font-size: 200px;
-}
-@media screen and (max-width: 768px) {
-    .col-sm-4 {
-        text-align: center;
-        margin: 25px 0;
-    }
 }
 
 .container {
@@ -146,7 +129,7 @@ body {
 }
 
 .active {
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 	/*border-bottom: 3px solid;*/
 
 }
@@ -241,13 +224,22 @@ ul#video iframe {
 	color: white;
 }
 
-#h1 {
+
+.btn {
+	padding: 5px 24px;
+}
+
+.baloo-chettan {
+	font-family: 'Baloo Chettan', cursive;
+}
+
+/*#h1 {
   animation: blinker 1s linear infinite;
 }
 
 @keyframes blinker {  
   50% { opacity: 0.0; }
-}
+}*/
 
 
 @media only all and (max-width: 400px) {
@@ -258,3 +250,10 @@ ul#video iframe {
     #content {
     	margin-top: -213px;
     }
+
+ @media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
