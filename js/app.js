@@ -15,21 +15,21 @@ $(function() {
 
 	$('#about-modal').click(function() {
 		$('#modal').show(function() {
-			$('#bg-container').hide();
+			$('#content').hide();
 			$('#bg-image').hide();
 		})
 	})
 
 	$('#about-btn').click(function() {
 		$('#modal').hide(function() {
-			$('#bg-container').show();
+			$('#content').show();
 			$('#bg-image').show();
 		})
 	}) 
 
 	$('.hide-modal').click(function() {
 		$('#modal').hide(function() {
-			$('#bg-container').show();
+			$('#content').show();
 			$('#bg-image').show();
 		})
 	}) 
