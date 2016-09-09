@@ -7,7 +7,7 @@ body {
 
 #bg-image {
 	background-image: url("http://www.messengernewspapers.co.uk/resources/images/3261938/");
-	height: 100vh;
+	height: 38vh;
 	width: 100%;
 	opacity: .1;
 	background-repeat: no-repeat;
@@ -53,6 +53,12 @@ body {
     background-size: cover; 
     color: #ffffff;
     padding: 100px 25px;
+}
+
+.off-red {
+	color: #d9534f;
+	font-family: 'Lato', sans-serif;
+	font-weight: 200;
 }
 
 .jumbotron h1, h3, h4{
@@ -109,7 +115,7 @@ body {
 
 .header {
 	font-size: 25px;
-	font-weight: 700;
+	
 }
 
 .youtube-font {
@@ -179,7 +185,7 @@ body {
 
 
 #content {
-	margin-top: -840px;
+	margin-top: -400px;
 	padding:30px; 
 	height:100vh;
 	color: white;
@@ -250,16 +256,16 @@ body {
 #lyrics-footer {
 	list-style-type: none;
 }
-
+/*
 @media only all and (max-width: 800px) {
     #bg-image {
         margin-top: 30px;
     }
     #content {
     	margin-top: -861px; /*1080px for ipad device*/
-    }
+    /*}*/
 
-    #bg-container {
+ /*   #bg-container {
     	margin-top: -80px;
     }
 
@@ -286,4 +292,4 @@ body {
     #content {
     	margin-top: -200px;
     }
-
+*/
