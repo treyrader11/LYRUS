@@ -41,13 +41,13 @@ $('#lyrics-footer .btn').click(function() {
 
 //mediawiki api below
 
-	function getArtistInfo(searchTerm) {
+	function getWiki(query) {
 		var params = {
 			format: "jsonp",
-			action: searchTerm,
-			prop: "extracts",
-			action: "opensearch", 
-  			search: searchTerm, 
+			prop: "revisions",
+			action: query, 
+  			titles: 'Main%20Page', 
+  			rvprop: "content",
   
 		}
 

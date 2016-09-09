@@ -10,7 +10,7 @@ $(function() {
     	var searchTerm = $('#query').val(); //define variable last
     	searchTrack(searchTerm);
     	getVideos(searchTerm);
-    	getArtistInfo(searchTerm);
+    	getWiki(searchTerm);
 	});
 
 })

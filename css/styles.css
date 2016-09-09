@@ -6,15 +6,14 @@ body {
 }
 
 #bg-image {
-	background-image: url("http://www.gloriousnoise.com/images/smiths-onstage-oxford85.jpg");
-	/*make video thumbnail background image*/
+	background-image: url("http://www.messengernewspapers.co.uk/resources/images/3261938/");
+	height: 100vh;
+	width: 100%;
+	opacity: .1;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	/*background-attachment: fixed;*/ /*paralex scrollign effect*/
-	margin-top: -32px;
-	/*color: #c13b3b;*/
-	height: 100vh;
+	margin-top: 40px;
 }
 
 
@@ -177,25 +176,13 @@ body {
 }
 
 
-#bg-image {
-	width: 100%;
-	opacity: .2;
-	background-repeat: no-repeat;
-	background-size: cover;
-	/*max-height: 100%;*/
-	background-position: center;
-	/*background-attachment: fixed;*/ /*paralex scrollign effect*/
-	margin-top: 40px;
-	/*color: #c13b3b;*/
-	
-}
 
 
 #content {
 	margin-top: -840px;
 	padding:30px; 
-	/*background-attachment: fixed;*/
 	height:100vh;
+	color: white;
 }
 
 
@@ -290,9 +277,7 @@ body {
         margin: 25px 0;
     }
 }
- height: 640
- width: 900
-
+ 
 @media only all and (max-width: 400px) {
     #bg-image {
         width: 0vh;
