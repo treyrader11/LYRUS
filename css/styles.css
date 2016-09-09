@@ -213,6 +213,7 @@ body {
 	color: white;
 }
 
+
 #lyrics-list a,
 #videos-list h5 {
 	color: white;
@@ -228,6 +229,10 @@ body {
 }
 
 #about-modal {
+
+}
+
+#about-btn {
 
 }
 

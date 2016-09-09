@@ -199,7 +199,7 @@ function getVideos(searchTerm) {
    		// var lightBox = '<iframe width="300" height="230" src="https://www.youtube.com/embed/' +videoId+ '" frameborder="0" allowfullscreen></iframe>';
    		var embedURL = "https://www.youtube.com/embed/" +videoId;
 
-  		html += '<li><h5>' +title+ '</h5><br/><a href="#video-modal" data-toggle="modal" data-embed="' +embedURL+ '"><img src="' +thumbnail+ '"/></a></li><br/>';
+  		html += '<li><h5>' +title+ '</h5><br/><a href="#video-modal" data-toggle="modal" data-title="' +title+ '" data-embed="' +embedURL+ '"><img src="' +thumbnail+ '"/></a></li><br/>';
   
 	});
 
@@ -212,13 +212,17 @@ $('#videos-list').on('click', 'a', function(e) {
 
     var URL = $(this).data('embed'); //getting the data from 'embedVideo'
     //that is contained within the 'a' (link).
-    showLightbox(URL);
+    var title = $(this).data('title');
+    showLightbox(URL, title);
     //now passing the data to the showLightbox function.
  })
 
-function showLightbox(URL) {
+function showLightbox(URL, title) {
 	var html = '<li><iframe width="300" height="230" src="' +URL+ '" frameborder="0" allowfullscreen></iframe></li>';
 	$('ul#video').html(html);
+
+	var title = '<h4>' +title+ '</h4>';
+	$('#video-modal .modal-header').html(title);
 	//giving the modal-box <ul> all of this new html that has some store data from our ajax call
 }
 
