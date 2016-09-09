@@ -20,7 +20,7 @@ function getTracks(track_id) {
 			var trackURL = data.message.body.track.track_share_url;
 			var trackName = data.message.body.track.track_name;
 			console.log('the name of the track is ' +trackName); 
-			var lyricsLink = '<br/><a href="' +trackURL+ '" target="_blank"><li id="full-lyrics" class="pull-left link">See full lyrics here</li></a>'; 
+			var lyricsLink = '<br/><a href="' +trackURL+ '" target="_blank"><li id="full-lyrics" class="pull-left link">To see full lyrics, click here</li></a>'; 
 			var track_name = '<h4>"' +trackName+ '"</h4>';
 			$('#lyrics-modal .modal-header').html(track_name);
 			$('#lyrics-footer').prepend(lyricsLink);

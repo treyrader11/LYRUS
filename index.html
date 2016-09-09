@@ -2,6 +2,8 @@
 <html>
 <title>LYRUS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/YTPlayer.css" media="all" rel="stylesheet" type="text/css"><!--helps style my vid-->
+
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
@@ -51,12 +53,17 @@
 
 
 	<div class="container-fluid text-center" id="bg-container">
+		
+		<a class="player" data-property="{videoURL:'x8o-AHDgiCs?',containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1}">
+
+			<iframe id="bg-image" width="900" height="900" src="//www.youtube.com/embed/x8o-AHDgiCs?
+			autoplay=1&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1&amp;playlist=PLAYLIST_ID_HERE" frameborder="0"></iframe>
+
+		</a>
+	</div>
 	
-		<iframe id="bg-image" width="900" height="900" src="//www.youtube.com/embed/x8o-AHDgiCs?
-		autoplay=1&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1&amp;playlist=PLAYLIST_ID_HERE" frameborder="0"></iframe>
 	
-	
-	  	<div class="text-center" id="content">
+	<div class="text-center" id="content">
 	  		<h2>Click on each result to take a closer look</h2>
 	    	<ul class="row list-unstyled list-inline" id="search-results">
 		    	<li class="col-sm-4">
@@ -84,8 +91,8 @@
 		    		</div>
 		    	</li>
 		    </ul>
-	    </div>
 	</div>
+	
 	
 
 	<!-- All the Modals -->
@@ -113,7 +120,7 @@
 		</div>
 
 		<div class="container">
-			<p><span style="font-size: 30px"><em>Lyrus</em></span> is a single-page web application which aggregates resources from YouTube, MusiXmatch, and Wikipedia, aiming to facilitate the process of searching for music and music related information. Whether the user wishes to view basic biographical information regarding an artist, watch popular music videos, look up lyrics, or do all three, the fact that Lyrus asyncronistically allows for each makes it worth your while.  </p>
+			<p><span style="font-size: 30px"><em>Lyrus</em></span> is a single-page web app aggregate which fuses resources from YouTube, MusiXmatch, and Wikipedia, aiming to facilitate the process of searching for music and music related information. Lyrus makes it worth your while, whether users are seeking biographical information regarding an artist, wish to watch popular music videos, look up lyrics, or simultaneously want to do it all.  </p>
 		</div>
 		<div id="about-btn" class="btn btn-default pull-right">Close
 			<span class="glyphicon glyphicon-remove"></span>
@@ -162,6 +169,9 @@
  
 
 	<!--<script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>-->
+	<script src="inc/jquery.mb.YTPlayer.js"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>-->
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/app.js"></script>

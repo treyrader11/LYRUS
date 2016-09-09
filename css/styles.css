@@ -6,14 +6,14 @@ body {
 }
 
 #bg-image {
-	background-image: url("http://scienceillustrated.com.au/blog/wp-content/uploads/2012/06/music.jpg");
+	background-image: url("smiths_blue.jpg");
 	/*make video thumbnail background image*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed; /*paralex scrollign effect*/
 	margin-top: -32px;
-	color: #c13b3b;
+	/*color: #c13b3b;*/
 	height: 100vh;
 }
 

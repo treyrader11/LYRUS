@@ -16,24 +16,26 @@ $(function() {
 })
 
 $('#about-modal').click(function() {
-	$('#modal').fadeIn(1000, function() {
+	$('#modal').show(function() {
 		$('#bg-container').hide();
 	})
 })
 
 $('#about-btn').click(function() {
-	$('#modal').fadeOut(1000, function() {
+	$('#modal').hide(function() {
 		$('#bg-container').show()
 	})
 }) 
 
 $('.hide-modal').click(function() {
-	$('#modal').fadeOut(1000, function() {
+	$('#modal').hide(function() {
 		$('#bg-container').show()
 	})
 }) 
 
-
+$(function(){
+	$(".player").mb_YTPlayer();
+});
 
 
 
