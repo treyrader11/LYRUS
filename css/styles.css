@@ -45,6 +45,7 @@ body {
 
 #query {
 	text-align: center;
+	background: 0 0;
 }
 
  .jumbotron { 
@@ -243,7 +244,14 @@ body {
 	display: none;
 }
 
+.remove {
+	display: none;
+	margin-left: 14px;
+}
 
+.remove:hover {
+	cursor: pointer;
+}
 
 /*#h1 {
   animation: blinker 1s linear infinite;

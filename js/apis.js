@@ -39,7 +39,7 @@ function showTracks(trackList) {
   		var trackId = tracks.track.track_id;
   		var trackName = tracks.track.track_name;
 
-  		html += '<li><a href="#lyrics-modal" data-toggle="modal" data-track_name="' +trackName+ '" data-track_id="' +trackId+ '">' +artist+ ': ' +trackName+ '</a></li><br/>';
+  		html += '<li><a href="#lyrics-modal" data-toggle="modal" data-track_name="' +trackName+ '" data-track_id="' +trackId+ '">' +artist+ ': ' +trackName+ '</a><img src="https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-part-2/512/erase_delete_remove_wipe_out-128.png" height="19" width="19" class="remove"></li><br/>';
   	}); 
 
   $('ul#lyrics-list').html(html); //this html is a <li> in which a link targets a modal window
@@ -143,7 +143,7 @@ function getVideos(searchTerm) {
    		// var lightBox = '<iframe width="300" height="230" src="https://www.youtube.com/embed/' +videoId+ '" frameborder="0" allowfullscreen></iframe>';
    		var embedURL = "https://www.youtube.com/embed/" +videoId;
 
-  		html += '<li><h5>' +title+ '</h5><br/><a href="#video-modal" data-toggle="modal" data-title="' +title+ '" data-embed="' +embedURL+ '"><img src="' +thumbnail+ '"/></a></li><br/>';
+  		html += '<li><h5>' +title+ '<img src="https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-part-2/512/erase_delete_remove_wipe_out-128.png" height="19" width="19" class="remove"></h5><br/><a href="#video-modal" data-toggle="modal" data-title="' +title+ '" data-embed="' +embedURL+ '"><img src="' +thumbnail+ '"/></a></li><br/>';
   
 	});
 
@@ -238,12 +238,13 @@ $('#lyrics-footer .btn').click(function() {
 
 //mediawiki api below
 
-	function getWiki(query) {
+	function getWiki(searchTerm) {
 		var params = {
-			format: "jsonp",
-			prop: "revisions",
-			action: query, 
-  			titles: 'Main%20Page', 
+			format: "json",
+			prop: "info",
+			action: "query",
+			list: "search", 
+  			srsearch: searchTerm, 
   			rvprop: "content",
   
 		}
@@ -252,10 +253,13 @@ $('#lyrics-footer .btn').click(function() {
 			type: 'GET',
 			url: "https://en.wikipedia.org/w/api.php",
 			data: params,
-			dataType: 'jsonp',
-			//jsonp: 'callback',
+			dataType: 'json',
+			jsonp: 'callback',
 			success: function(data) {
 				console.log("wiki data is: " +data);
+			},
+			error: function() {
+				console.log("could not retrieve wiki data", arguments);
 			}
 		})
 	}
