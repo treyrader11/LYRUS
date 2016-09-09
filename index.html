@@ -14,15 +14,27 @@
 	<ul class="nav navbar-default bg-black navbar-fixed-top" role="navigation">
   		<li class="pull-left active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/projects/lyricAPIHack/aboutPage.html">HOME<span class="caret"></span></a> <!--'caret' gives it a dropdown arrow-->
 		<ul class="dropdown-menu">
-          <li><a href="#search-header">Search</a></li>
-          <li><a href="#videos-list">Videos</a></li>
-          <li><a href="#lyrics-list">Lyrics</a></li>
-          <li><a href="#artist-list">Artist</a></li>
+          <li class="hide-modal"><a href="#search-header">Search</a></li>
+          <li class="hide-modal"><a href="#videos-list">Videos</a></li>
+          <li class="hide-modal"><a href="#lyrics-list">Lyrics</a></li>
+          <li class="hide-modal"><a href="#artist-list">Artist</a></li>
         </ul>
   		</li>
-  		<li class="pull-right"><a href="#">ABOUT</a></li>
+  		<li id="about-modal" class="pull-right"><a href="#">ABOUT</a></li>
 	</ul>
 	
+
+	
+
+
+
+
+
+
+
+
+
+
 	<div class="jumbotron text-center baloo-chettan"> 
   		<h3>Welcome<h3>
   		<h3>to</h3>
@@ -76,6 +88,41 @@
 	</div>
 	
 
+	<!-- All the Modals -->
+
+
+	<div class="overlay" id="modal">
+		<div class="container-fluid text-center">
+			<ul class="row list-unstyled list-inline" id="search-results">
+		    	<li class="col-sm-4">
+		    		<div class="panel panel-default no-border">
+		    			<img src="https://www.seeklogo.net/wp-content/uploads/2011/02/youtube-logo-vector-400x400.png" width="150" height="150" class="header"/>
+		    		</div>
+		    	</li>
+		    	<li class="col-sm-4">
+		    		<div class="panel panel-default no-border">
+		    			<img src="http://www.extension.zone/wp-content/uploads/2015/02/MusixMatchlogo.jpg" width="160" height="150" class="header"/>
+		    		</div>
+		    	</li>
+		    	<li class="col-sm-4">
+		    		<div class="panel panel-default no-border">
+		    			<img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Wikipedia-logo-en-big.png" width="130" height="150" class="header"/>
+		    		</div>
+		    	</li>
+		    </ul>
+		</div>
+
+		<div class="container">
+			<p><span style="font-size: 30px"><em>Lyrus</em></span> is a single-page web application which aggregates resources from YouTube, MusiXmatch, and Wikipedia, aiming to facilitate the process of searching for music and music related information. Whether the user wishes to view basic biographical information regarding an artist, watch popular music videos, look up lyrics, or do all three, the fact that Lyrus allows asyncronistically for all makes it worth your while.  </p>
+		</div>
+		<div id="about-btn" class="btn btn-default pull-right">Close
+			<span class="glyphicon glyphicon-remove"></span>
+		</div>
+
+	</div>
+
+
+
 	<div class="modal fade" role="dialog" id="video-modal">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -104,7 +151,6 @@
 					
 				<div class="modal-footer text-center">
 					<ul id="lyrics-footer">
-						<!--<br/><a href="#"><li id="full-lyrics" class="pull-left">See full lyrics here</li></a>-->
 						<a class="btn btn-default" data-dismiss="modal"><li class="glyphicon glyphicon-remove"></li></a>
 					</ul>
 	<!--data-toggle="modal" opens the modal and data-dismiss="modal" closes the modal-->

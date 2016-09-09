@@ -13,11 +13,27 @@ $(function() {
     	//getArtistInfo(searchTerm);
 	});
 
-	 
-   
-
-
 })
+
+$('#about-modal').click(function() {
+	$('#modal').fadeIn(1000, function() {
+		$('#bg-container').hide();
+	})
+})
+
+$('#about-btn').click(function() {
+	$('#modal').fadeOut(1000, function() {
+		$('#bg-container').show()
+	})
+}) 
+
+$('.hide-modal').click(function() {
+	$('#modal').fadeOut(1000, function() {
+		$('#bg-container').show()
+	})
+}) 
+
+
 
 
 
