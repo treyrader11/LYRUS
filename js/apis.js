@@ -38,22 +38,35 @@ $('#lyrics-footer .btn').click(function() {
 })
 
 
-/*$('#lyrics-footer').on('click', 'a', function(e) {
-    e.preventDefault();
 
-    var track_id = $(this).data('track_id');
-    //getTracks(track_id);
-    console.log('the track_id is ' +track_id+ '!')
+//mediawiki api below
 
-   
+	function getArtistInfo(searchTerm) {
+		var params = {
+			format: "jsonp",
+			action: searchTerm,
+			prop: "extracts",
+			action: "opensearch", 
+  			search: searchTerm, 
+  
+		}
 
-})
+		$.ajax({
+			type: 'GET',
+			url: "https://en.wikipedia.org/w/api.php",
+			data: params,
+			dataType: 'jsonp',
+			//jsonp: 'callback',
+			success: function(data) {
+				console.log("wiki data is: " +data);
+			}
+		})
+	}
 
-$('#lyrics-footer > a').click(function() {
-	 var track_id = $(this).data('track_id');
-    //getTracks(track_id);
-      console.log('the track_id is ' +track_id+ '!')
+//https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Sachin_Tendulkar
 
-});
-*/
+
+
+
+
    

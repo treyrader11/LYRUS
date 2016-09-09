@@ -10,7 +10,7 @@ $(function() {
     	var searchTerm = $('#query').val(); //define variable last
     	searchTrack(searchTerm);
     	getVideos(searchTerm);
-    	//getArtistInfo(searchTerm);
+    	getArtistInfo(searchTerm);
 	});
 
 })
@@ -33,10 +33,24 @@ $('.hide-modal').click(function() {
 	})
 }) 
 
-/*$(function(){
-	$(".player").mb_YTPlayer();
-});*/
 
+//youtube stuffbelow
+
+/*var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('ytplayer', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    player.mute();
+    player.playVideo();
+}
+*/
 
 
 
@@ -241,31 +255,4 @@ function showLightbox(URL, title) {
 
 
 
-	//mediawiki api below
-
-	function getArtistInfo(searchTerm) {
-		var params = {
-			format: "jsonp",
-			//q: searchTerm,
-			action: searchTerm,
-			//maxlag: "",
-			prop: "extracts"
-		}
-
-		$.ajax({
-			type: 'GET',
-			url: "https://en.wikipedia.org/w/api.php",
-			data: params,
-			dataType: 'jsonp',
-			//jsonp: 'callback',
-			success: function(data) {
-				console.log("wiki data is: " +data);
-			}
-		})
-	}
-
-//https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Sachin_Tendulkar
-
-
-
-
+	
