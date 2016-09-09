@@ -33,9 +33,9 @@ $('.hide-modal').click(function() {
 	})
 }) 
 
-$(function(){
+/*$(function(){
 	$(".player").mb_YTPlayer();
-});
+});*/
 
 
 

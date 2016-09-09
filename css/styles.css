@@ -11,7 +11,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed; /*paralex scrollign effect*/
+	/*background-attachment: fixed;*/ /*paralex scrollign effect*/
 	margin-top: -32px;
 	/*color: #c13b3b;*/
 	height: 100vh;
@@ -184,7 +184,7 @@ body {
 	background-size: cover;
 	/*max-height: 100%;*/
 	background-position: center;
-	background-attachment: fixed; /*paralex scrollign effect*/
+	/*background-attachment: fixed;*/ /*paralex scrollign effect*/
 	margin-top: -174px;
 	/*color: #c13b3b;*/
 	height: 100vh;
@@ -192,7 +192,7 @@ body {
 
 
 #content {
-	margin-top: -748px;
+	margin-top: -840px;
 	padding:30px; 
 	background-attachment: fixed;
 }
@@ -263,15 +263,6 @@ body {
 	list-style-type: none;
 }
 
-@media only all and (max-width: 400px) {
-    #bg-image {
-        width: 0vh;
-        height: 0vh;
-    }
-    #content {
-    	margin-top: -213px;
-    }
-
 @media only all and (max-width: 800px) {
     #bg-image {
         margin-top: -94px;
@@ -286,3 +277,14 @@ body {
         margin: 25px 0;
     }
 }
+
+
+@media only all and (max-width: 400px) {
+    #bg-image {
+        width: 0vh;
+        height: 0vh;
+    }
+    #content {
+    	margin-top: -283px;
+    }
+
