@@ -268,7 +268,19 @@ body {
         margin-top: -94px;
     }
     #content {
-    	margin-top: -660px;
+    	margin-top: -766px; /*1080px for ipad device*/
+    }
+
+    #bg-container {
+    	margin-top: -80px;
+    }
+
+@media only all and (max-height: 650px) {
+    #bg-image {
+        margin-top: -94px;
+    }
+    #content {
+    	margin-top: -590px;
     }
 
  @media screen and (max-width: 768px) {
@@ -285,6 +297,6 @@ body {
         height: 0vh;
     }
     #content {
-    	margin-top: -283px;
+    	margin-top: -200px;
     }
 
