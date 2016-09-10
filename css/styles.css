@@ -208,7 +208,7 @@ body {
 	color: white;
 }
 
-
+#artist-list a,
 #lyrics-list a,
 #videos-list h5 {
 	color: white;
@@ -291,13 +291,15 @@ body {
         margin: 25px 0;
     }
 }
- 
-@media only all and (max-width: 400px) {
-    #bg-image {
-        width: 0vh;
-        height: 0vh;
-    }
+ */
+
+
+
+@media only screen and (max-height: 480px) {
+    
     #content {
-    	margin-top: -200px;
+    	margin-top: -336px;
     }
-*/
+}
+
+
