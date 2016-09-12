@@ -31,12 +31,12 @@ li {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	margin-top: -6.125em;
+	margin-top:   -4.125em; /*-6.125em;*/
 	border: none;
 }
 
 #content {
-	margin-top: -33.9375em;
+	margin-top: -36.9375em; /*-33.9375em*/
 	padding: 1.875em; 
 	height: 100vh;
 	color: white;
@@ -294,7 +294,8 @@ li {
     }
 
     #bg-image {
-    	width: 64vh;
+    	
+    	margin-top: -4.125em;
     }
     #lyrics-footer {
     	padding: 3px;
