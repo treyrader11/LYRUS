@@ -65,20 +65,15 @@ function getTracks(track_id) {
 		dataType: 'jsonp',
 		jsonp: 'callback',
 		success: function(data) {
-			var trackURL = data.message.body.track.track_share_url;
-			var trackName = data.message.body.track.track_name;
-			console.log('the name of the track is ' +trackName); 
-			var lyricsLink = '<br/><a href="' +trackURL+ '" target="_blank"><li id="full-lyrics" class="pull-left link">To see full lyrics, click here</li></a>'; 
-			var track_name = '<h4>"' +trackName+ '"</h4>';
-			$('#lyrics-modal .modal-header').html(track_name);
-			$('#lyrics-footer').prepend(lyricsLink);
-			//added .link so that when btn is clicked, it'll remove the previous link since
-			//the the markup is being appended.
+			
+			var tracks = data.message.body;
+		
+			showMoreTracks(tracks);
 		}
 	});
 }
 
-function getLyrics(track_id, track_name) { //track_id is the parameter in order 
+function getLyrics(track_id) { //track_id is the parameter in order 
 	//to get the specific json data listed on the musixmatch api doc.
 	//So we pass it in getLyrics and define it in the params object.
     
@@ -101,15 +96,61 @@ function getLyrics(track_id, track_name) { //track_id is the parameter in order
 		success: function(data) {
 			var lyrics = data.message.body.lyrics.lyrics_body;
 			var copyright = data.message.body.lyrics.lyrics_copyright;
-			//console.log(copyright);
+			//console.log('lyrics data', data);
 			showLyrics(lyrics);
 			showCopyright(copyright);
 		},
+		error: function() {
+				console.log("could not retrieve wiki data", arguments);
+			}
 	});
+
+//AJAX call to a different endpoint using same params.
+
 }
+
+function showMoreTracks(tracks) {
+	var $header = $('#lyrics-modal .modal-header');
+	var $footer = $('#lyrics-footer');
+	var $body = $('#lyrics'); 
+
+	$.each(tracks, function(index, track) {
+		
+
+
+		console.log(track)
+		
+
+		var trackURL = track.track_share_url;
+		var album = track.album_name;
+		var album_name = '<h4 class="height"><em>' +album+ '</em></h4>'
+		var song = track.track_name;
+		var lyricsNum = track.has_lyrics;
+		var lyricsLink = '<br/><a href="' +trackURL+ '" target="_blank"><li id="full-lyrics" class="pull-left link">To see full lyrics, click here</li></a>'; 
+		var track_name = '<h4 class="top">"' +song+ '"</h4><br/>';
+
+
+
+		$header.html(track_name + '<h4 class="height">of</h4><br/>' +album_name);
+		//$footer.prepend(lyricsLink);
+			//added .link so that when btn is clicked, it'll remove the previous link since
+			//the the markup is being appended.
+		if (lyricsNum == 0) {
+			$body.html("<li>Sorry, but we're unable to find the lyrics for " + '"' +song+ '".' + "</li>")
+			$footer.prepend('<li class="pull-left link">Here are a few other sites for finding lyrics: </li><br/><li class="pull-left circle link"><a href="http://www.lyrics.com/" target="_blank">Lyrics.com</a></li><br/><li class="pull-left circle link"><a href="http://www.letssingit.com/" target="_blank">LetsSingIt.com</a></li><br/><li class="pull-left circle link"><a href="http://www.lyricsmode.com/" target="_blank">LyricsMode.com</a></li>');
+		}
+		else {
+			$footer.prepend(lyricsLink);
+		}
+	})
+}
+
+
+
 
 function showLyrics(lyrics) {
 	var html = lyrics;
+
 
 	$('ul#lyrics').html(html);
 }

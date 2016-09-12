@@ -14,15 +14,15 @@
 	
 
 	<ul class="nav navbar-default bg-black navbar-fixed-top" role="navigation">
-  		<li class="pull-left active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/projects/lyricAPIHack/aboutPage.html">HOME<span class="caret"></span></a> <!--'caret' gives it a dropdown arrow-->
+  		<li class="pull-left blink active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/projects/lyricAPIHack/aboutPage.html">HOME<span class="caret"></span></a> <!--'caret' gives it a dropdown arrow-->
 		<ul class="dropdown-menu">
-          <li class="hide-modal"><a href="#search-header">Search</a></li>
-          <li class="hide-modal"><a href="#videos-list">Videos</a></li>
-          <li class="hide-modal"><a href="#lyrics-list">Lyrics</a></li>
-          <li class="hide-modal"><a href="#artist-list">Artist</a></li>
+          <li class="hide-modal blink"><a href="#search-header">Search</a></li>
+          <li class="hide-modal blink"><a href="#videos-list">Videos</a></li>
+          <li class="hide-modal blink"><a href="#lyrics-list">Lyrics</a></li>
+          <li class="hide-modal blink"><a href="#artist-list">Artist</a></li>
         </ul>
   		</li>
-  		<li id="about-modal" class="pull-right"><a href="#">ABOUT</a></li>
+  		<li id="about-modal" class="pull-right blink"><a href="#">ABOUT</a></li>
 	</ul>
 	
 
@@ -44,7 +44,7 @@
   		<p id="search-header">Search for the lyrics and videos of your favorite songs</p>
   		<form id="search-term" class="form-inline">
   		<!--the autocomplete='off' attribute keeps the text input's history clear-->
-    		<input type="text" autocomplete="off" id="query" class="form-control" size="30" placeholder="Enter name of song and artist">
+    		<input type="text" autocomplete="off" id="query" class="form-control" size="30" placeholder="artist, albums, and songs">
     		<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
 
   		</form> 
@@ -71,14 +71,14 @@
 	    	<ul class="row list-unstyled list-inline" id="search-results">
 		    	<li class="col-sm-4">
 		    		<div class="panel panel-default">
-		    			<p class="header off-red">Videos</p>
+		    			<p class="header blink off-red">Videos</p>
 		    			<ul id="videos-list" class="list-unstyled">
 		    			</ul>
 		    		</div>
 		    	</li>
 		    	<li class="col-sm-4">
 		    		<div class="panel panel-default">
-		    			<p class="header off-red">Lyrics</p>
+		    			<p class="header blink off-red">Lyrics</p>
 		    			<ul id="lyrics-list" class="list-unstyled">
 		    				
 		    			</ul>
@@ -86,7 +86,7 @@
 		    	</li>
 		    	<li class="col-sm-4">
 		    		<div class="panel panel-default">
-		    			<p class="header off-red">Artist's Info</p>
+		    			<p class="header blink off-red">Artist's Info</p>
 		    			<ul id="artist-list" class="list-unstyled">
 		    				
 		    			</ul>
@@ -156,7 +156,7 @@
 				<div class="modal-header text-center">
 					<!--<h4>Lyrics</h4>-->
 				</div>
-				<ul class="modal-body" id="lyrics">
+				<ul class="modal-body text-center" id="lyrics">
 				</ul>
 					
 				<div class="modal-footer text-center">
@@ -177,7 +177,7 @@
 				<div class="modal-header text-center">
 					<!--<h4>Lyrics</h4>-->
 				</div>
-				<ul class="modal-body" id="artist">
+				<ul class="modal-body text-center" id="artist">
 				</ul>
 					
 				<div class="modal-footer text-center">

@@ -5,11 +5,15 @@ body {
 	background: black;
 }
 
+li {
+	list-style-type: none;
+}
+
 #bg-image {
 	background-image: url("http://www.messengernewspapers.co.uk/resources/images/3261938/");
 	height: 38vh;
 	width: 100%;
-	opacity: .1;
+	opacity: .4;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -138,6 +142,10 @@ body {
 
 }
 
+.vanish {
+	display: none;
+}
+
 .nav-justified {
 	/*allows things to stretch across screen evenly*/
 }
@@ -166,7 +174,14 @@ body {
 
 .modal-header h4 {
 	font-size: 20px;
+}
+
+.top {
 	margin-top: 5px;
+}
+
+.height {
+	margin-top: -28px;
 }
 
 
@@ -214,6 +229,11 @@ body {
 	color: white;
 }
 
+.results {
+	display: none;
+}
+
+
 
 .btn {
 	padding: 5px 24px;
@@ -253,6 +273,19 @@ body {
 	cursor: pointer;
 }
 
+#content .header:hover {
+	cursor: pointer;
+	/*opacity: .5;*/
+}
+
+.blink:active {
+	opacity: .5;
+}
+
+.circle {
+	list-style-type: circle;
+}
+
 /*#h1 {
   animation: blinker 1s linear infinite;
 }
@@ -264,6 +297,7 @@ body {
 #lyrics-footer {
 	list-style-type: none;
 }
+
 /*
 @media only all and (max-width: 800px) {
     #bg-image {

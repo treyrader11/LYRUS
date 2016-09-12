@@ -21,7 +21,7 @@
 			dataType: 'jsonp',
 			jsonp: 'callback',
 			success: function(data) {
-				console.log("wiki data is", data);
+				//console.log("wiki data is", data);
 				var artist_info = data.query.search;
 				showWiki(artist_info);
 			},
@@ -38,13 +38,13 @@
   	$.each(artist_info, function(index, artist){
   		//console.log(artist);
   		var name = artist.title;
-  		var bio = '<li>' +artist.snippet+ '</li>';
+  		var bio = artist.snippet;
 
   		console.log(bio);
     	
-  		$('.modal-body ul#artist').append(bio);
-  		html += '<li><a href="#artist-modal" data-toggle="modal" data-artist_name="' +name+ '" data-bio="">' +name+ '</a></li><br/>';
-	});//bio conatines info that isn't parsed right so I need a plan B
+  		//$('#artist').append('<li>' +bio+ '</li>');
+  		html += '<li><a href="#artist-modal" data-toggle="modal" data-artist_name="' +name+ '" data-bio="' +bio+ '">' +name+ '</a></li><br/>';
+	});//bio contains info that isn't correctly parsed so will need a plan B
 
   	$('#artist-list').html(html)
 
@@ -57,16 +57,12 @@ $('ul#artist-list').on('click', 'a', function(e) {
     //that are contained within a variable of another function.
     //We're getting the value of 'data-track_id' from showTrackNames() and
     //passing it to getLyrics().
-    //var artistBio = $(this).data('bio');
-    var artist_name = '<h4>Info for "' +artistName+ '"</h4>';
-    //var bio = '<li>' +artistBio+ '</li>';
+    var artistBio = $(this).data('bio');
+    var artist_name = '<h4><em>' +artistName+ '</em></h4>';
+    var bio = '<li>' +artistBio+ '</li>';
 
     $('#artist-modal .modal-header').html(artist_name);
-    //$('.modal-body ul#artist').html(bio);
-	//$('#lyrics-footer').prepend();
-
-      
-   // getLyrics(track_id);
-    //getTracks(track_id);
+    $('#artist').append('<li><p>' +bio+ '</p></li>');
+	
 
 })

@@ -8,9 +8,11 @@ $(function() {
 	$searchForm.submit(function(e) { //the <button> has to have a type="submit"
 		e.preventDefault(); //need this to prevent the page from refreshing since that is the default functionality
     	var searchTerm = $('#query').val(); //define variable last
-    	searchTrack(searchTerm);
-    	getVideos(searchTerm);
-    	getWiki(searchTerm);
+    	$('#bg-image').fadeTo(500, .1, function() {
+    		searchTrack(searchTerm);
+    		getVideos(searchTerm);
+    		getWiki(searchTerm);
+    	});
 	});
 
 	$('#about-modal').click(function() {
@@ -34,10 +36,31 @@ $(function() {
 		})
 	})
 
+	/*$('#bg-image').mouseenter(function() {
+		$(this).fadeTo(500, .5);
+	})
+	$('#bg-image').mouseleave(function() {
+		$(this).fadeTo(500, .1);
+	})*/
+	
+	$('#content .header').on('click', "li", function() {
+		$(this).toggleClass('results');
+	})
+	
+	
+	
+
+
+	
+})
 
 
 
 
+
+//below is code for removing items from each lists: artist, lyrics, videos.
+
+/*
 	$('#videos-list').on('mouseenter', 'li', function() {
 		$(this).find('.remove').show();
 	});
@@ -61,7 +84,7 @@ $(function() {
 	});
 
 
-})
+})*/
 
 
 
