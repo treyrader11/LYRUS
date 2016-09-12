@@ -11,13 +11,20 @@ li {
 
 #bg-image {
 	background-image: url("http://www.messengernewspapers.co.uk/resources/images/3261938/");
-	height: 38vh;
-	width: 100%;
+	height: 71vh;
+	width: 100vh;
 	opacity: .4;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	margin-top: 40px;
+	margin-top: -98px;
+}
+
+#content {
+	margin-top: -543px;
+	padding:30px; 
+	height:100vh;
+	color: white;
 }
 
 
@@ -200,14 +207,6 @@ li {
 
 
 
-#content {
-	margin-top: -400px;
-	padding:30px; 
-	height:100vh;
-	color: white;
-}
-
-
 /*media query must come after*/
 
 
@@ -334,11 +333,85 @@ li {
 
 
 
-@media only screen and (max-height: 480px) {
+@media only screen and (max-height: 568px) {
     
     #content {
-    	margin-top: -336px;
+    	margin-top: -462px;
+    }
+
+    #bg-image {
+    	width: 64vh;
+    }
+    #lyrics-footer {
+    	padding: 3px;
     }
 }
 
 
+
+
+/*iphone5*/
+
+@media only screen and (max-height: 568px) {
+    
+    #content {
+    	margin-top: -462px;
+    }
+
+    #bg-image {
+    	width: 64vh;
+    }
+    #lyrics-footer {
+    	padding: 3px;
+    }
+}
+
+@media only screen and (min-height: 480px) {
+    
+    #content {
+    	margin-top: -462px;
+    }
+
+    #bg-image {
+    	width: 64vh;
+    }
+    #lyrics-footer {
+    	padding: 3px;
+    }
+}
+
+
+/*iphone 4*/
+
+
+
+@media only screen and (max-height: 480px) {
+    
+    #content {
+    	margin-top: -380px;
+    }
+
+    #bg-image {
+    	width: 64vh;
+    }
+    #lyrics-footer {
+    	padding: 3px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    
+    #content {
+    	margin-top: -380px;
+    }
+
+    #bg-image {
+    	width: 64vh;
+    }
+    #lyrics-footer {
+    	padding: 3px;
+    }
+}
+
+
+/*ask gabe aboutm edia query*/
