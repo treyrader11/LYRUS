@@ -337,7 +337,7 @@ li {
 
 /*ask gabe aboutm edia query*/
 
-@media only screen and (min-height: 480px) {
+@media only screen and (max-height: 480px) {
     
     #content {
     	margin-top: -499px;
