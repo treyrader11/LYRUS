@@ -279,6 +279,10 @@ li {
 	/*opacity: .5;*/
 }
 
+.fade {
+	opacity: .5;
+}
+
 .blink:active {
 	opacity: .5;
 }
