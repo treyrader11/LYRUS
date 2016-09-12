@@ -137,7 +137,7 @@ function showMoreTracks(tracks) {
 			//the the markup is being appended.
 		if (lyricsNum == 0) {
 			$body.html("<li>Sorry, but we're unable to find the lyrics for " + '"' +song+ '".' + "</li>")
-			$footer.prepend('<li class="pull-left link">Here are a few other sites for finding lyrics: </li><br/><li class="pull-left circle link"><a href="http://www.lyrics.com/" target="_blank">Lyrics.com</a></li><br/><li class="pull-left circle link"><a href="http://www.letssingit.com/" target="_blank">LetsSingIt.com</a></li><br/><li class="pull-left circle link"><a href="http://www.lyricsmode.com/" target="_blank">LyricsMode.com</a></li><br/>');
+			$footer.prepend('<li class="pull-left link">Here are a few other sites for finding lyrics: </li><br/><li class="pull-left circle link"><a href="http://www.lyrics.com/" target="_blank">Lyrics.com</a></li><br/><li class="pull-left circle link"><a href="http://www.letssingit.com/" target="_blank">LetsSingIt.com</a></li><br/><li class="pull-left circle link"><a href="http://www.lyricsmode.com/" target="_blank">LyricsMode.com</a></li>');
 		}
 		else {
 			$footer.prepend(lyricsLink);

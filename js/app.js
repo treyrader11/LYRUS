@@ -36,16 +36,19 @@ $(function() {
 		})
 	})
 
-	/*$('#bg-image').mouseenter(function() {
-		$(this).fadeTo(500, .5);
-	})
-	$('#bg-image').mouseleave(function() {
-		$(this).fadeTo(500, .1);
-	})*/
 	
-	$('#content .header').on('click', "li", function() {
-		$(this).toggleClass('results');
+	
+
+	$('#video-header-modal').click(function() {
+		$(this).next().slideToggle();
 	})
+	$('#lyrics-header-modal').click(function() {
+		$(this).next().slideToggle();
+	})
+	$('#artist-header-modal').click(function() {
+		$(this).next().slideToggle();
+	})
+	
 	
 	
 	
