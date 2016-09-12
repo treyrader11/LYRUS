@@ -1,6 +1,20 @@
-body {
-	/*font-family: 'Baloo Chettan', cursive;*/
+*:before, 
+*:after {
+	box-sizing: inherit;	
+}
 
+html {
+	box-sizing: border-box;
+}
+
+.form-control {
+	/*means the default width is 100%*/
+	
+}
+
+/*it's best practice to include these styles at the top*/
+
+body {
 	font-family: 'Lato', sans-serif;
 	background: black;
 }
@@ -12,45 +26,41 @@ li {
 #bg-image {
 	background-image: url("http://www.messengernewspapers.co.uk/resources/images/3261938/");
 	height: 71vh;
-	width: 100vh;
+	/*width: 100vh;*/
 	opacity: .4;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	margin-top: -98px;
+	margin-top: -6.125em;
+	border: none;
 }
 
 #content {
-	margin-top: -543px;
-	padding:30px; 
-	height:100vh;
+	margin-top: -33.9375em;
+	padding: 1.875em; 
+	height: 100vh;
 	color: white;
 }
-
 
 .p {
 	width: 50% ;
 	margin: 0 auto;
 	background-color: #eee;
-	padding: 30px;
+	padding: 1.875em;
 	border-radius: 5%;
 	box-shadow: 10px 10px 5px #888888;
 
 }
 
-.container,
-.container-fluid {
-	/*background: transparent;*/
-}
 
  #search-results {
- 	max-width: 960px;
+ 	max-width: 60em;
  	margin: 0 auto;
  	/*box-shadow:  10px 10px 5px #888888;*/
  }
 
 #search-results .header {
-	font-size: 20px;
+	font-size: 1.25em;
 	font-style: bold;
 }
 
@@ -64,7 +74,7 @@ li {
 	background-repeat: no-repeat;
     background-size: cover; 
     color: #ffffff;
-    padding: 100px 25px;
+    padding: 6.25em 1.5625em;
 }
 
 .off-red {
@@ -76,19 +86,24 @@ li {
 .jumbotron h1, h3, h4{
 	color: #d9534f;
 	font-weight: 600;
-	margin-top: -13px;
+	margin-top: .1875em;
 }
 
-.text-center {
-	/*adding this class will center an element in bootstrap*/
-}
-
-.form-inline {
-	/*makes everything nested inside the <form> lay side by side*/
-}
 
 .form-control {
 	/*means the default width is 100%*/
+}
+
+.nav-justified {
+	/*allows things to stretch across screen evenly*/
+}
+
+.navbar-inverse {
+	/*gives you a black nav/navbar-default gives you a white*/
+}
+
+.navbar-static-top {
+	/*makes it responsive*/
 }
 
 .bg-grey {
@@ -96,13 +111,13 @@ li {
 }
 
 .container-fluid {
-	padding: 60px 50px; 
+	padding: 3.75em 3.125em; 
 	/* .container-fluid stretches across the entire screen/ 
 	.container doesn't */
 }
 
 .logo {
-    font-size: 200px;
+    font-size: 12.5em;
 }
 
 .container {
@@ -114,7 +129,7 @@ li {
 }
 
 .thumbnail {
-    padding: 0 0 15px 0;
+    padding: 0 0 .9375em 0;
     border: none;
     border-radius: 0;
 }
@@ -122,39 +137,53 @@ li {
 .thumbnail img {
     width: 100%;
     height: 100%;
-    margin-bottom: 10px;
+    margin-bottom: .625em;
 }
 
 .header {
-	font-size: 25px;
+	font-size: 1.5625em;
 	
 }
 
 .youtube-font {
-	font-size: 15px;
+	font-size: .9375em;
 }
 
 
 #h1 {
-	font-size: 75px;
+	font-size: 4.6875em;
 }
 
 .bg-black {
 	background: black;
 }
 
-.active {
-	/*text-decoration: underline;*/
-	/*border-bottom: 3px solid;*/
-
-}
-
+.remove,
+.results,
 .vanish {
 	display: none;
 }
 
-.nav-justified {
-	/*allows things to stretch across screen evenly*/
+.remove {
+	margin-left: .875em;
+}
+
+#content .header:hover, 
+.remove:hover {
+	cursor: pointer;
+}
+
+.blink:active,
+.fade {
+	opacity: .5;
+}
+
+.circle {
+	list-style-type: circle;
+}
+
+.no-border {
+	border: none;
 }
 
 .nav >li a {
@@ -166,32 +195,17 @@ li {
 	text-decoration: underline;
 }
 
-.navbar-inverse {
-	/*gives you a black nav/navbar-default gives you a white*/
-}
-
-.navbar-static-top {
-	/*makes it responsive*/
-
-}
-
-.no-border {
-	border: none;
-}
-
 .modal-header h4 {
-	font-size: 20px;
+	font-size: 1.25em;
 }
 
 .top {
-	margin-top: 5px;
+	margin-top: .3125em;
 }
 
 .height {
-	margin-top: -28px;
+	margin-top: -1.75em;
 }
-
-
 
 .nav > li > a:hover,
 .nav > li > a:focus,
@@ -204,24 +218,11 @@ li {
     background-color: transparent;
 }
 
-
-
-
-/*media query must come after*/
-
-
-
 .panel {
 	background: transparent;
 	border: none;
 }
 
-.modal-content,
-.modal-body {
-	/*background: rgba(0, 0, 0, 0.86);*/
-	/*color: white;*/
-
-}
 
 #artist-list a,
 #lyrics-list a,
@@ -229,26 +230,12 @@ li {
 	color: white;
 }
 
-.results {
-	display: none;
-}
-
-
-
 .btn {
 	padding: 5px 24px;
 }
 
 .baloo-chettan {
 	font-family: 'Baloo Chettan', cursive;
-}
-
-#about-modal {
-
-}
-
-#about-btn {
-
 }
 
 .overlay {
@@ -264,74 +251,11 @@ li {
 	display: none;
 }
 
-.remove {
-	display: none;
-	margin-left: 14px;
-}
-
-.remove:hover {
-	cursor: pointer;
-}
-
-#content .header:hover {
-	cursor: pointer;
-	/*opacity: .5;*/
-}
-
-.fade {
-	opacity: .5;
-}
-
-.blink:active {
-	opacity: .5;
-}
-
-.circle {
-	list-style-type: circle;
-}
-
-/*#h1 {
-  animation: blinker 1s linear infinite;
-}
-
-@keyframes blinker {  
-  50% { opacity: 0.0; }
-}*/
 
 #lyrics-footer {
 	list-style-type: none;
+	margin-left: 20px;
 }
-
-/*
-@media only all and (max-width: 800px) {
-    #bg-image {
-        margin-top: 30px;
-    }
-    #content {
-    	margin-top: -861px; /*1080px for ipad device*/
-    /*}*/
-
- /*   #bg-container {
-    	margin-top: -80px;
-    }
-
-@media only all and (max-height: 650px) {
-    #bg-image {
-        margin-top: -94px;
-    }
-    #content {
-    	margin-top: -590px;
-    }
-
- @media screen and (max-width: 768px) {
-    .col-sm-4 {
-        text-align: center;
-        margin: 25px 0;
-    }
-}
- */
-
-
 
 @media only screen and (max-height: 568px) {
     
@@ -346,9 +270,6 @@ li {
     	padding: 3px;
     }
 }
-
-
-
 
 /*iphone5*/
 
@@ -369,7 +290,7 @@ li {
 @media only screen and (min-height: 480px) {
     
     #content {
-    	margin-top: -462px;
+    	margin-top: -593px;
     }
 
     #bg-image {
