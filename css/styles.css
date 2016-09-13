@@ -52,7 +52,6 @@ li {
 
 }
 
-
  #search-results {
  	max-width: 60em;
  	margin: 0 auto;
@@ -251,10 +250,14 @@ li {
 	display: none;
 }
 
-
 #lyrics-footer {
 	list-style-type: none;
 	margin-left: 20px;
+}
+
+.blink a {
+	color: #100202;
+
 }
 
 @media only screen and (max-height: 568px) {

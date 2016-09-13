@@ -35,7 +35,7 @@ function showWiki(search_info) {
     $('#artist-list').empty()
 
       	$.each(search_info, function(index, info){
-          	//console.log(info);
+          	console.log(info);
           	var name = info.title;
           	var bio = info.snippet;
 
