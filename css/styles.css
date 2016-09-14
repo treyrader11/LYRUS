@@ -25,14 +25,20 @@ li {
 
 #bg-image {
 	opacity: .4;
-	margin-top: -8.125em; 
+	margin-top: -8.125em;
+	position: relative;
+	top: 3px;
+	z-index: 2; 
 }
 
 #content {
-	margin-top: -7.9375em; 
+	margin-top: -32.9375em; /*-7.9375em;*/ 
 	padding: 1.875em; 
 	color: white;
 	position: relative;
+	top: 45px;
+	left: -10px;
+	z-index: 1;
 }
 
 #content > h2 {
@@ -332,7 +338,7 @@ li {
 @media only screen and (max-width: 320px) {
     
     #content {
-    	margin-top: -380px;
+    	margin-top: -305px;
     }
 
     #bg-image {
