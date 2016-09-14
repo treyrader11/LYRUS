@@ -24,22 +24,19 @@ li {
 }
 
 #bg-image {
-	background-image: url("http://www.messengernewspapers.co.uk/resources/images/3261938/");
-	height: 71vh;
-	/*width: 100vh;*/
 	opacity: .4;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	margin-top:   -4.125em; /*-6.125em;*/
-	border: none;
+	margin-top: -8.125em; 
 }
 
 #content {
-	margin-top: -36.9375em; /*-33.9375em*/
+	margin-top: -7.9375em; 
 	padding: 1.875em; 
-	height: 100vh;
 	color: white;
+	position: relative;
+}
+
+#content > h2 {
+	margin-top: 0px;
 }
 
 .p {
@@ -260,6 +257,14 @@ li {
 
 }
 
+
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+
 @media only screen and (max-height: 568px) {
     
     #content {
@@ -354,3 +359,57 @@ li {
     	padding: 3px;
     }
 }
+
+
+/*to fade the carousel*/
+
+/*.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: .5;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+/*@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}*/
