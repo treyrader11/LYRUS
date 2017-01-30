@@ -14,7 +14,7 @@ html {
 
 /*it's best practice to include these styles at the top*/
 
-/*body {
+body {
 	font-family: 'Lato', sans-serif;
 	background: black;
 }
@@ -28,22 +28,22 @@ li {
 	margin-top: -8.125em;
 	position: relative;
 	top: 3px;
-	z-index: 1; 
+	z-index: 2; 
 }
 
 #content {
-	margin-top: -35.9375em;  
+	margin-top: -32.9375em; /*-7.9375em;*/ 
 	padding: 1.875em; 
 	color: white;
 	position: relative;
 	top: 45px;
 	left: -10px;
-	z-index: 2;
+	z-index: 1;
 }
 
 #content > h2 {
 	margin-top: 0px;
-}*/
+}
 
 .p {
 	width: 50% ;
@@ -55,9 +55,10 @@ li {
 
 }
 
- /*#search-results {
+ #search-results {
  	max-width: 60em;
  	margin: 0 auto;
+ 	/*box-shadow:  10px 10px 5px #888888;*/
  }
 
 #search-results .header {
@@ -88,7 +89,7 @@ li {
 	color: #d9534f;
 	font-weight: 600;
 	margin-top: .1875em;
-}*/
+}
 
 
 .form-control {
@@ -105,29 +106,29 @@ li {
 
 .navbar-static-top {
 	/*makes it responsive*/
-}*/
+}
 
 .bg-grey {
 	background: #f6f6f6;
 }
 
-/*.container-fluid {
+.container-fluid {
 	padding: 3.75em 3.125em; 
 	/* .container-fluid stretches across the entire screen/ 
 	.container doesn't */
-/*}*/
+}
 
 .logo {
     font-size: 12.5em;
 }
 
-/*.container {
+.container {
 	color: #d9534f;
 }
 
 .container-fluid {
 	background: transparent;
-}*/
+}
 
 .thumbnail {
     padding: 0 0 .9375em 0;
@@ -141,17 +142,17 @@ li {
     margin-bottom: .625em;
 }
 
-/*.header {
+.header {
 	font-size: 1.5625em;
 	
-}*/
+}
 
 .youtube-font {
 	font-size: .9375em;
 }
 
 
-/*#h1 {
+#h1 {
 	font-size: 4.6875em;
 }
 
@@ -187,7 +188,7 @@ li {
 	border: none;
 }
 
-.nav > li a {
+.nav >li a {
 	color: rgb(243, 243, 243);
 }
 
@@ -198,7 +199,7 @@ li {
 
 .modal-header h4 {
 	font-size: 1.25em;
-}*/
+}
 
 .top {
 	margin-top: .3125em;
@@ -208,7 +209,7 @@ li {
 	margin-top: -1.75em;
 }
 
-/*.nav > li > a:hover,
+.nav > li > a:hover,
 .nav > li > a:focus,
 .dropdown-menu, 
 .dropdown-menu .open>a:hover,
@@ -250,23 +251,25 @@ li {
 	margin: 0;
 	z-index: 1000;
 	display: none;
-}*/
+}
 
 #lyrics-footer {
 	list-style-type: none;
 	margin-left: 20px;
 }
 
-/*.blink a {
+.blink a {
 	color: #100202;
 
 }
+
+
 
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
       width: 70%;
       margin: auto;
-  }*/
+  }
 
 @media only screen and (max-height: 568px) {
     
@@ -363,3 +366,56 @@ li {
     }
 }
 
+
+/*to fade the carousel*/
+
+/*.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: .5;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+/*@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}*/
