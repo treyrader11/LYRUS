@@ -8,7 +8,7 @@ $(function() {
 	$searchForm.submit(function(e) { //the <button> has to have a type="submit"
 		e.preventDefault(); //need this to prevent the page from refreshing since that is the default functionality
     	var searchTerm = $('#query').val(); //define variable last
-    	$('#bg-image').fadeTo(500, .1, function() {
+    	$('#bg-image').fadeOut(500, function() {
     		searchTrack(searchTerm);
     		getVideos(searchTerm);
     		getWiki(searchTerm);
@@ -18,14 +18,14 @@ $(function() {
 	$('#about-modal').click(function() {
 		$('#modal').show(function() {
 			$('#content').hide();
-			$('#bg-image').hide();
+			//$('#bg-image').hide();
 		})
 	})
 
 	$('#about-btn').click(function() {
 		$('#modal').hide(function() {
 			$('#content').show();
-			$('#bg-image').show();
+			//$('#bg-image').show();
 		})
 	}) 
 
