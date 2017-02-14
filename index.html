@@ -2,16 +2,17 @@
 <html>
 <title>LYRUS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
 <link rel="icon" type="image/png" href="images/note2.jpg">
-<link rel="stylesheet" href="build/LYRUS.0.0.0.min.css">
+<link rel="stylesheet" href="css/styles.css">
 
 <body>
 	
-	<!--navigation bar -->
 
-	<ul class="nav navbar-default navbar-fixed-top" role="navigation">
+	<ul class="nav navbar-default bg-black navbar-fixed-top" role="navigation">
   		<li class="pull-left blink active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/projects/lyricAPIHack/aboutPage.html">HOME<span class="caret"></span></a> <!--'caret' gives it a dropdown arrow-->
 		<ul class="dropdown-menu">
           <li class="hide-modal blink"><a href="#search-header">Search</a></li>
@@ -23,24 +24,58 @@
   		<li id="about-modal" class="pull-right blink"><a href="#">ABOUT</a></li>
 	</ul>
 	
-<!--title and input form-->
 
-	<header class="jumbotron text-center baloo-chettan"> 
+	<div class="jumbotron text-center baloo-chettan"> 
   		<h3>Welcome<h3>
   		<h3>to</h3>
   		<h1 id="h1">LYR<em>US</em></h1> 
   		<p id="search-header">Search for the lyrics and videos of your favorite songs</p>
   		<form id="search-term" class="form-inline">
   		<!--the autocomplete='off' attribute keeps the text input's history clear-->
-    		<input type="text" autocomplete="off" id="query" class="form-control text-center" size="30" placeholder="artist, albums, and songs">
+    		<input type="text" autocomplete="off" id="query" class="form-control" size="30" placeholder="artist, albums, and songs">
     		<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
-		</form> 
-	</header>
+
+  		</form> 
+	</div>
 
 
-<!--carousel lies underneith search content-->
 
-	<section class="container-fluid bg-image"> <!--had bg-image id-->
+<div class="text-center container-fluid" id="content">
+	  	<h2>Click on each result to take a closer look</h2>
+	    <ul class="row list-unstyled list-inline nav-justified" id="search-results">
+		    <li class="col-sm-4">
+		    	<div class="panel panel-default">
+		    		<p id="video-header-modal" class="header off-red">Videos<span class="caret"></span></p>
+		    		<ul id="videos-list" class="list-unstyled">
+		    		</ul>
+		    	</div>
+		    </li>
+		    <li class="col-sm-4">
+		    	<div class="panel panel-default">
+		    		<p id="lyrics-header-modal" class="header off-red">Lyrics<span class="caret"></span></p>
+		    		<ul id="lyrics-list" class="list-unstyled">
+		    				
+		    		</ul>
+		    	</div>
+		    </li>
+		    <li class="col-sm-4">
+		    	<div class="panel panel-default">
+		    		<p id="artist-header-modal" class="header off-red">Artist's Snippet<span class="caret"></span></p>
+		    		<ul id="artist-list" class="list-unstyled">
+		    				
+		    		</ul>
+		    						
+		    	</div>
+		    </li>
+		</ul>
+	</div>
+
+
+
+
+<!--was slide class-->
+
+	<div class="container-fluid" id="bg-image">
   		<br>
   		<div id="myCarousel" class="carousel carousel-fade" data-ride="carousel">
     
@@ -69,44 +104,16 @@
   
     		</div>
   		</div>
-	</section>
+	</div>
 
-	<!--search results title container-->
+	
 
-	<section class="text-center container-fluid" id="content">
-	  	<h2>Click on each result to take a closer look</h2>
-	    <ul class="row list-unstyled list-inline nav-justified" id="search-results">
-		    <li class="col-sm-4">
-		    	<div class="panel panel-default">
-		    		<p id="video-header-modal" class="header off-red">Videos<span class="caret"></span></p>
-		    		<ul id="videos-list" class="list-unstyled">
-		    		</ul>
-		    	</div>
-		    </li>
-		    <li class="col-sm-4">
-		    	<div class="panel panel-default">
-		    		<p id="lyrics-header-modal" class="header off-red">Lyrics<span class="caret"></span></p>
-		    		<ul id="lyrics-list" class="list-unstyled">
-		    				
-		    		</ul>
-		    	</div>
-		    </li>
-		    <li class="col-sm-4">
-		    	<div class="panel panel-default">
-		    		<p id="artist-header-modal" class="header off-red">Artist's Snippet<span class="caret"></span></p>
-		    		<ul id="artist-list" class="list-unstyled">
-		    				
-		    		</ul>
-		    	</div>
-		    </li>
-		</ul>
-	</section>
+	<!-- All the Modals -->
 
-<!-- about page modal -->
 
-	<section class="overlay container" id="modal">
+	<div class="overlay container" id="modal">
 		<div class="text-center">
-			<ul class="row list-unstyled list-inline" id="results">
+			<ul class="row list-unstyled list-inline" id="search-results">
 		    	<li class="col-sm-4">
 		    		<div class="panel panel-default no-border">
 		    			<img src="https://www.seeklogo.net/wp-content/uploads/2011/02/youtube-logo-vector-400x400.png" width="150" height="150" class="header"/>
@@ -126,14 +133,15 @@
 		</div>
 
 		<div class="container">
-			<p><span style="font-size: 30px"><em>Lyrus</em></span> is a single-page web application which searches for resources from YouTube, MusiXmatch, and Wikipedia simultaneously. Lyrus makes it worth your while, whether users are seeking biographical information regarding an artist, wish to watch popular music videos, look up lyrics, or want to do it all.</p>
+			<p><span style="font-size: 30px"><em>Lyrus</em></span> is a single-page web app which fuses resources from YouTube, MusiXmatch, and Wikipedia, aiming to facilitate the process of searching for music and music related information.</p>
 		</div>
 		<div id="about-btn" class="btn btn-default pull-right">Close
 			<span class="glyphicon glyphicon-remove"></span>
 		</div>
-	</section>
 
-	<!--lightbox for youtube video-->
+	</div>
+
+
 
 	<div class="modal fade" role="dialog" id="video-modal">
 		<div class="modal-dialog">
@@ -151,7 +159,6 @@
 		</div>
 	</div>
 
-	<!--modal for musixmatch lyrics-->
 
 	<div class="modal fade" role="dialog" id="lyrics-modal">
 		<div class="modal-dialog">
@@ -173,7 +180,6 @@
 		</div>
 	</div>
 
-<!--modal for snippit from wikipedia-->
 
 	<div class="modal fade" role="dialog" id="artist-modal">
 		<div class="modal-dialog">
@@ -195,13 +201,13 @@
  
 
 	
-	<!--<script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>-->
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+	<script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="build/LYRUS.0.0.0.min.js"></script>
-	<!--<script src="ajax/musixmatch.js"></script>
+	<script src="js/app.js"></script>
+	<script src="ajax/musixmatch.js"></script>
 	<script src="ajax/youtube.js"></script>
-	<script src="ajax/wiki.js"></script>-->
+	<script src="ajax/wiki.js"></script>
 </body>
 </html>
 
